@@ -1,0 +1,30 @@
+{
+  "description": "Observed data from actual analysis",
+  "note": "TODO: Replace with actual observed metrics from your analysis",
+  "charts": [
+    {
+      "id": "distribution",
+      "title": "Infrastructure Distribution",
+      "type": "bar",
+      "data": [
+        { "category": "Category A", "count": 45 },
+        { "category": "Category B", "count": 32 },
+        { "category": "Category C", "count": 58 },
+        { "category": "Category D", "count": 27 }
+      ]
+    },
+    {
+      "id": "timeline",
+      "title": "Data Collection Timeline",
+      "type": "line",
+      "data": [
+        { "month": "Aug 23", "value": 10 },
+        { "month": "Sep 23", "value": 15 },
+        { "month": "Oct 23", "value": 22 },
+        { "month": "Nov 23", "value": 28 },
+        { "month": "Dec 23", "value": 35 }
+      ]
+    }
+  ]
+}
+

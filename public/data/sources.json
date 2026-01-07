@@ -1,0 +1,35 @@
+[
+  {
+    "title": "Sample Urban Infrastructure Dataset",
+    "type": "dataset",
+    "publisher": "Example City Open Data",
+    "year": 2023,
+    "url": "https://example.com/dataset",
+    "note": "TODO: Replace with actual dataset used"
+  },
+  {
+    "title": "Smart Cities Framework Paper",
+    "type": "paper",
+    "publisher": "Academic Journal",
+    "year": 2022,
+    "url": "https://example.com/paper",
+    "note": "TODO: Replace with actual papers cited"
+  },
+  {
+    "title": "Python Data Analysis Tools",
+    "type": "tool",
+    "publisher": "Python Software Foundation",
+    "year": 2024,
+    "url": "https://www.python.org",
+    "note": "Used for data processing and analysis"
+  },
+  {
+    "title": "Jupyter Notebooks",
+    "type": "tool",
+    "publisher": "Project Jupyter",
+    "year": 2024,
+    "url": "https://jupyter.org",
+    "note": "Primary analysis environment"
+  }
+]
+

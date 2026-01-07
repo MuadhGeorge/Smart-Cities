@@ -1,0 +1,113 @@
+[
+  {
+    "date": "2023-08",
+    "title": "Joined VIP Team 1270",
+    "description": "Started working on SDGs: Resilient Infrastructures and Sustainable Innovation with focus on Smart Cities and Urban Systems",
+    "tags": ["onboarding", "team"],
+    "semester": "Fall 2023"
+  },
+  {
+    "date": "2023-09",
+    "title": "Literature Review",
+    "description": "Conducted literature review on smart city frameworks, urban resilience metrics, and infrastructure equity",
+    "tags": ["research", "reading"],
+    "semester": "Fall 2023"
+  },
+  {
+    "date": "2023-10",
+    "title": "Data Collection Planning",
+    "description": "Identified potential datasets for urban infrastructure analysis and collaborated with team on research scope",
+    "tags": ["planning", "data"],
+    "semester": "Fall 2023",
+    "artifacts": [
+      {
+        "label": "Dataset Survey",
+        "href": "#"
+      }
+    ]
+  },
+  {
+    "date": "2023-11",
+    "title": "Initial Analysis Framework",
+    "description": "Developed framework for analyzing urban infrastructure data with equity considerations",
+    "tags": ["analysis", "framework"],
+    "semester": "Fall 2023"
+  },
+  {
+    "date": "2023-12",
+    "title": "Fall Semester Presentation",
+    "description": "Presented preliminary findings and research direction to VIP team",
+    "tags": ["presentation", "milestone"],
+    "semester": "Fall 2023"
+  },
+  {
+    "date": "2024-01",
+    "title": "Data Processing Pipeline",
+    "description": "Built data processing pipeline for cleaning and preparing urban datasets",
+    "tags": ["coding", "data"],
+    "semester": "Spring 2024"
+  },
+  {
+    "date": "2024-02",
+    "title": "Exploratory Data Analysis",
+    "description": "Conducted EDA on urban infrastructure datasets, identified patterns and potential insights",
+    "tags": ["analysis", "visualization"],
+    "semester": "Spring 2024"
+  },
+  {
+    "date": "2024-03",
+    "title": "Model Development",
+    "description": "Started developing predictive models for infrastructure assessment",
+    "tags": ["modeling", "coding"],
+    "semester": "Spring 2024"
+  },
+  {
+    "date": "2024-04",
+    "title": "Spring Semester Results",
+    "description": "Compiled initial results and prepared mid-project documentation",
+    "tags": ["milestone", "documentation"],
+    "semester": "Spring 2024"
+  },
+  {
+    "date": "2024-08",
+    "title": "Model Refinement",
+    "description": "Refined models based on feedback and expanded analysis scope",
+    "tags": ["modeling", "analysis"],
+    "semester": "Fall 2024"
+  },
+  {
+    "date": "2024-09",
+    "title": "Validation Studies",
+    "description": "Conducted validation studies and sensitivity analysis on model outputs",
+    "tags": ["validation", "testing"],
+    "semester": "Fall 2024"
+  },
+  {
+    "date": "2024-10",
+    "title": "Final Analysis",
+    "description": "Completed final analysis and interpretation of results with team collaboration",
+    "tags": ["analysis", "collaboration"],
+    "semester": "Fall 2024"
+  },
+  {
+    "date": "2024-11",
+    "title": "Final Report Writing",
+    "description": "Drafted and revised final research report documenting methodology and findings",
+    "tags": ["writing", "documentation"],
+    "semester": "Fall 2024",
+    "artifacts": [
+      {
+        "label": "Final Report",
+        "href": "/report"
+      }
+    ]
+  },
+  {
+    "date": "2024-12",
+    "title": "Project Completion",
+    "description": "Completed VIP research project and final presentation",
+    "tags": ["milestone", "presentation"],
+    "semester": "Fall 2024"
+  }
+]
+

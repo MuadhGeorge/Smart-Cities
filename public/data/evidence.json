@@ -1,0 +1,50 @@
+[
+  {
+    "claim": "Analyzed urban infrastructure data across multiple dimensions",
+    "status": "proven",
+    "evidence": [
+      {
+        "label": "Analysis Notebook",
+        "href": "#"
+      },
+      {
+        "label": "Final Report Section 3",
+        "href": "/report"
+      }
+    ],
+    "notes": "Evidence includes documented analysis steps and visualizations"
+  },
+  {
+    "claim": "Developed predictive model for infrastructure assessment",
+    "status": "demo",
+    "evidence": [
+      {
+        "label": "Model Code",
+        "href": "#"
+      }
+    ],
+    "notes": "Demo model shown for illustration purposes. Performance metrics require validation with actual test data."
+  },
+  {
+    "claim": "Collaborated with team members on research scope and methodology",
+    "status": "proven",
+    "evidence": [
+      {
+        "label": "Meeting Notes",
+        "href": "#"
+      },
+      {
+        "label": "Team Page",
+        "href": "/team"
+      }
+    ],
+    "notes": "Regular team meetings documented throughout project timeline"
+  },
+  {
+    "claim": "Model achieves X% accuracy on validation set",
+    "status": "needs evidence",
+    "evidence": [],
+    "notes": "TODO: Add validation results when available. Current model is for demonstration only."
+  }
+]
+
