@@ -1,0 +1,15 @@
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#003057" stroke-width="0.5" opacity="0.2"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="#f8fafc"/>
+  <rect width="100%" height="100%" fill="url(#grid)"/>
+  <rect x="20" y="20" width="760" height="460" fill="none" stroke="#003057" stroke-width="2" stroke-dasharray="8,4" rx="8"/>
+  <text x="400" y="230" font-family="Roboto, sans-serif" font-size="24" fill="#003057" text-anchor="middle" font-weight="600">Figure Placeholder</text>
+  <text x="400" y="270" font-family="Roboto, sans-serif" font-size="16" fill="#857437" text-anchor="middle">TBD — Run notebook to generate</text>
+  <rect x="340" y="300" width="120" height="40" fill="#EAAA00" rx="4"/>
+  <text x="400" y="326" font-family="Roboto, sans-serif" font-size="14" fill="#003057" text-anchor="middle" font-weight="500">PENDING</text>
+</svg>
+
