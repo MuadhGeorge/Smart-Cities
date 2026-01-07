@@ -1,0 +1,30 @@
+{
+  "description": "Demo forecast results - for illustration purposes only",
+  "warning": "These are demonstration forecasts generated for portfolio purposes. They do not represent validated predictions.",
+  "assumptions": [
+    "Model trained on sample data",
+    "Assumes static conditions",
+    "Does not account for policy changes",
+    "Simplified feature set for demonstration"
+  ],
+  "limitations": [
+    "Limited training data available",
+    "Model not validated on independent test set",
+    "Simplified modeling approach",
+    "Does not capture all relevant factors"
+  ],
+  "charts": [
+    {
+      "id": "predictions",
+      "title": "Predicted Infrastructure Scores (Demo)",
+      "type": "bar",
+      "data": [
+        { "region": "Region A", "predicted": 72, "confidence": "low" },
+        { "region": "Region B", "predicted": 65, "confidence": "low" },
+        { "region": "Region C", "predicted": 81, "confidence": "low" },
+        { "region": "Region D", "predicted": 58, "confidence": "low" }
+      ]
+    }
+  ]
+}
+
