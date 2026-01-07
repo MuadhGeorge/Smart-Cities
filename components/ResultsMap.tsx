@@ -91,7 +91,7 @@ export default function ResultsMap({ geojsonUrl }: ResultsMapProps) {
   };
 
   return (
-    <div className="w-full h-[400px] md:h-[600px] rounded-lg overflow-hidden border border-gray-300">
+    <div className="w-full h-[400px] md:h-[600px] rounded-lg overflow-hidden border border-gray-300 relative z-0">
       <MapContainer
         center={[33.75, -84.35]}
         zoom={11}

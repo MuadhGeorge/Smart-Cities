@@ -169,27 +169,21 @@ export default function Home() {
               ))}
             </ul>
           </div>
-          <div className="mt-6 text-center text-sm text-gray-600">
-            <p>
-              Edit this list in <code className="bg-gray-200 px-2 py-1 rounded font-mono text-xs">public/data/home-content.json</code>
-            </p>
-          </div>
         </div>
       </section>
 
-      {/* Team Collaboration Note */}
+      {/* Faculty Advisors */}
       <section className="py-16 bg-gt-navy text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Users className="mx-auto mb-4 text-gt-buzz-gold" size={48} />
           <h2 className="text-2xl font-serif font-bold mb-4">
-            Team Collaboration
+            Faculty Advisors
           </h2>
           <p className="text-gray-300 mb-6">
-            This research was conducted in collaboration with teammates Khadijah and Maymuna.
-            We worked together on research scope, methodology, and analysis throughout the project.
+            This research was conducted under the guidance of GTRI faculty advisors who provided expertise in urban systems analysis and sustainable development goals.
           </p>
           <Link href="/team" className="inline-block bg-gt-buzz-gold text-gt-navy px-6 py-3 rounded-lg hover:bg-gt-buzz-gold/90 transition-colors font-medium">
-            Learn About the Team
+            Meet the Advisors
           </Link>
         </div>
       </section>

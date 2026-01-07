@@ -151,21 +151,6 @@ export default function SourcesPage() {
           </Card>
         )}
 
-        {/* Instructions */}
-        <div className="mt-8 bg-gt-buzz-gold/10 border border-gt-buzz-gold/30 rounded-lg p-6">
-          <h3 className="font-serif font-semibold text-lg mb-3">
-            📚 Managing Sources
-          </h3>
-          <p className="text-gray-700 text-sm mb-2">
-            Add, edit, or remove sources in:
-          </p>
-          <code className="block bg-white px-3 py-2 rounded font-mono text-xs mb-3">
-            public/data/sources.json
-          </code>
-          <p className="text-gray-700 text-sm">
-            Each source should include: title, type (dataset/paper/tool), publisher, year, url, and a brief note.
-          </p>
-        </div>
       </div>
     </div>
   );

@@ -4,8 +4,7 @@
     "title": "Onboarding + literature review",
     "description": "Joined VIP Team 1270 and did early reading on smart city sensing + infrastructure monitoring. Defined a first pass at what 'smart cities' meant for our subteam focus.",
     "tags": ["Research", "Team"],
-    "semester": "Fall 2023",
-    "artifacts": [{"label": "Notes (TODO)", "href": "/"}]
+    "semester": "Fall 2023"
   },
   {
     "date": "2023-09",
@@ -34,7 +33,7 @@
     "description": "Summarized early progress and consolidated baseline findings into a report-style format for the semester deliverable.",
     "tags": ["Writing", "Research"],
     "semester": "Fall 2023",
-    "artifacts": [{"label": "Semester report (TODO)", "href": "/report"}]
+    "artifacts": [{"label": "View Report", "href": "/report"}]
   },
   {
     "date": "2024-01",

@@ -180,22 +180,6 @@ export default function EvidencePage() {
           </div>
         </Card>
 
-        {/* Instructions */}
-        <div className="mt-8 bg-gt-buzz-gold/10 border border-gt-buzz-gold/30 rounded-lg p-6">
-          <h3 className="font-serif font-semibold text-lg mb-3">
-            🔍 Managing Evidence
-          </h3>
-          <p className="text-gray-700 text-sm mb-2">
-            Add, update, or remove evidence entries in:
-          </p>
-          <code className="block bg-white px-3 py-2 rounded font-mono text-xs mb-3">
-            public/data/evidence.json
-          </code>
-          <p className="text-gray-700 text-sm">
-            Each entry should include: claim text, status (proven/needs evidence/demo), 
-            linked evidence artifacts, and explanatory notes.
-          </p>
-        </div>
       </div>
     </div>
   );
