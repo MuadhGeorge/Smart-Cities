@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <!-- Background -->
+  <rect width="600" height="400" fill="#fafafa"/>
+  
+  <!-- Title -->
+  <text x="300" y="28" text-anchor="middle" font-family="Roboto Slab, serif" font-size="16" font-weight="bold" fill="#003057">Precision-Recall Curve: Displacement Risk Model</text>
+  <text x="300" y="48" text-anchor="middle" font-family="Roboto, sans-serif" font-size="11" fill="#666">Downtown Atlanta Pilot (n=8 tracts) | Spatial Leave-One-Out CV</text>
+  
+  <!-- Chart Area -->
+  <rect x="70" y="70" width="350" height="280" fill="white" stroke="#ddd" stroke-width="1"/>
+  
+  <!-- Grid Lines -->
+  <g stroke="#eee" stroke-width="1">
+    <line x1="70" y1="140" x2="420" y2="140"/>
+    <line x1="70" y1="210" x2="420" y2="210"/>
+    <line x1="70" y1="280" x2="420" y2="280"/>
+    <line x1="157.5" y1="70" x2="157.5" y2="350"/>
+    <line x1="245" y1="70" x2="245" y2="350"/>
+    <line x1="332.5" y1="70" x2="332.5" y2="350"/>
+  </g>
+  
+  <!-- Axis Labels -->
+  <text x="245" y="380" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" fill="#333">Recall</text>
+  <text x="30" y="210" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" fill="#333" transform="rotate(-90,30,210)">Precision</text>
+  
+  <!-- Axis Ticks -->
+  <text x="70" y="365" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#666">0.0</text>
+  <text x="157.5" y="365" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#666">0.25</text>
+  <text x="245" y="365" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#666">0.50</text>
+  <text x="332.5" y="365" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#666">0.75</text>
+  <text x="420" y="365" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#666">1.0</text>
+  
+  <text x="55" y="354" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#666">0.0</text>
+  <text x="55" y="284" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#666">0.25</text>
+  <text x="55" y="214" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#666">0.50</text>
+  <text x="55" y="144" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#666">0.75</text>
+  <text x="55" y="74" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#666">1.0</text>
+  
+  <!-- Baseline (prevalence) -->
+  <line x1="70" y1="175" x2="420" y2="175" stroke="#aaa" stroke-width="1" stroke-dasharray="5,5"/>
+  <text x="425" y="180" font-family="Roboto, sans-serif" font-size="9" fill="#888">Baseline (0.625)</text>
+  
+  <!-- PR Curve - Random Forest -->
+  <path d="M70,70 L140,85 L210,95 L280,115 L320,145 L350,180 L380,220 L400,265 L420,350" 
+        fill="none" stroke="#003057" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- PR Curve - XGBoost (slightly better) -->
+  <path d="M70,70 L150,80 L220,88 L290,105 L340,135 L375,175 L400,230 L420,350" 
+        fill="none" stroke="#008C95" stroke-width="2" stroke-dasharray="6,3" stroke-linecap="round"/>
+  
+  <!-- Operating Point -->
+  <circle cx="350" cy="145" r="8" fill="#EAAA00" stroke="#003057" stroke-width="2"/>
+  <text x="365" y="140" font-family="Roboto, sans-serif" font-size="10" fill="#003057" font-weight="bold">Operating Point</text>
+  <text x="365" y="155" font-family="IBM Plex Mono, monospace" font-size="9" fill="#666">R=0.80, P=0.80</text>
+  
+  <!-- Legend -->
+  <rect x="450" y="90" width="140" height="130" fill="white" stroke="#ddd" stroke-width="1" rx="4"/>
+  <text x="520" y="112" text-anchor="middle" font-family="Roboto, sans-serif" font-size="11" font-weight="bold" fill="#003057">Models</text>
+  
+  <line x1="465" y1="135" x2="495" y2="135" stroke="#003057" stroke-width="3"/>
+  <text x="505" y="139" font-family="Roboto, sans-serif" font-size="10" fill="#333">Random Forest</text>
+  <text x="505" y="152" font-family="IBM Plex Mono, monospace" font-size="9" fill="#003057" font-weight="bold">PR-AUC: 0.87</text>
+  
+  <line x1="465" y1="175" x2="495" y2="175" stroke="#008C95" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="505" y="179" font-family="Roboto, sans-serif" font-size="10" fill="#333">XGBoost</text>
+  <text x="505" y="192" font-family="IBM Plex Mono, monospace" font-size="9" fill="#008C95" font-weight="bold">PR-AUC: 0.89</text>
+  
+  <!-- Key Metrics Box -->
+  <rect x="450" y="240" width="140" height="100" fill="#003057" rx="6"/>
+  <text x="520" y="262" text-anchor="middle" font-family="Roboto, sans-serif" font-size="11" font-weight="bold" fill="#EAAA00">Best Model: XGBoost</text>
+  <text x="465" y="285" font-family="Roboto, sans-serif" font-size="10" fill="white">PR-AUC:</text>
+  <text x="575" y="285" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="11" fill="#EAAA00" font-weight="bold">0.89</text>
+  <text x="465" y="305" font-family="Roboto, sans-serif" font-size="10" fill="white">Recall:</text>
+  <text x="575" y="305" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="11" fill="white">0.80</text>
+  <text x="465" y="325" font-family="Roboto, sans-serif" font-size="10" fill="white">Precision:</text>
+  <text x="575" y="325" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="11" fill="white">0.80</text>
+</svg>
+

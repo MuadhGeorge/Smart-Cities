@@ -174,6 +174,9 @@
     <button class="control-btn active" id="toggleStops" onclick="toggleLayer('stops')">
       <span>●</span> MARTA Stops
     </button>
+    <button class="control-btn" id="toggleRisk" onclick="toggleLayer('risk')">
+      <span>⚠</span> Displacement Risk
+    </button>
   </div>
 
   <div class="legend">
@@ -210,25 +213,44 @@
         <span>MARTA Stop</span>
       </div>
     </div>
+    <div class="legend-section">
+      <div class="legend-section-title">Model Predictions</div>
+      <div class="legend-item">
+        <div class="legend-color" style="background: rgba(215, 48, 39, 0.6); border: 2px dashed #d73027;"></div>
+        <span>High Risk (≥0.7)</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color" style="background: rgba(254, 224, 139, 0.6); border: 2px dashed #f57c00;"></div>
+        <span>Medium Risk (0.4-0.7)</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color" style="background: rgba(26, 152, 80, 0.4); border: 2px dashed #1a9850;"></div>
+        <span>Low Risk (&lt;0.4)</span>
+      </div>
+    </div>
   </div>
 
   <div class="stats-panel">
-    <h4>SDG 11.2.1 Metrics</h4>
+    <h4>SDG Metrics (Pilot)</h4>
     <div class="stat-row">
-      <span class="stat-label">Isochrone Area</span>
-      <span class="stat-value">0.42 km²</span>
+      <span class="stat-label">11.2.1 Coverage</span>
+      <span class="stat-value" style="color:#008C95">58%</span>
     </div>
     <div class="stat-row">
-      <span class="stat-label">Stops in View</span>
-      <span class="stat-value">12</span>
+      <span class="stat-label">11.7.1 Open Space</span>
+      <span class="stat-value" style="color:#008C95">12%</span>
     </div>
     <div class="stat-row">
-      <span class="stat-label">Tracts Covered</span>
-      <span class="stat-value">8</span>
+      <span class="stat-label">At-Risk Tracts</span>
+      <span class="stat-value" style="color:#d73027">5 of 8</span>
     </div>
     <div class="stat-row">
-      <span class="stat-label">Est. Pop. Served</span>
-      <span class="stat-value">~15,200</span>
+      <span class="stat-label">Model PR-AUC</span>
+      <span class="stat-value" style="color:#EAAA00">0.89</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Routing Speedup</span>
+      <span class="stat-value" style="color:#5F249F">~30x</span>
     </div>
   </div>
 
@@ -327,6 +349,77 @@
           [-84.3920, 33.7540]
         ]]
       }
+    };
+
+    // Model Predictions - Displacement Risk Scores
+    const riskPredictions = {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "properties": { "name": "Downtown", "risk_score": 0.25, "risk_level": "Low", "prediction": "Stable" },
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [[[-84.395, 33.748], [-84.380, 33.748], [-84.380, 33.762], [-84.395, 33.762], [-84.395, 33.748]]]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": { "name": "Old Fourth Ward", "risk_score": 0.78, "risk_level": "High", "prediction": "At Risk" },
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [[[-84.370, 33.762], [-84.355, 33.762], [-84.355, 33.780], [-84.370, 33.780], [-84.370, 33.762]]]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": { "name": "West End", "risk_score": 0.72, "risk_level": "High", "prediction": "At Risk" },
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [[[-84.420, 33.730], [-84.400, 33.730], [-84.400, 33.748], [-84.420, 33.748], [-84.420, 33.730]]]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": { "name": "Vine City", "risk_score": 0.81, "risk_level": "High", "prediction": "At Risk" },
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [[[-84.420, 33.748], [-84.400, 33.748], [-84.400, 33.762], [-84.420, 33.762], [-84.420, 33.748]]]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": { "name": "Westside BeltLine", "risk_score": 0.68, "risk_level": "Medium", "prediction": "At Risk" },
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [[[-84.435, 33.748], [-84.420, 33.748], [-84.420, 33.775], [-84.435, 33.775], [-84.435, 33.748]]]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": { "name": "Pittsburgh", "risk_score": 0.85, "risk_level": "High", "prediction": "At Risk" },
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [[[-84.420, 33.715], [-84.400, 33.715], [-84.400, 33.730], [-84.420, 33.730], [-84.420, 33.715]]]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": { "name": "Midtown", "risk_score": 0.35, "risk_level": "Low", "prediction": "Stable" },
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [[[-84.395, 33.762], [-84.380, 33.762], [-84.380, 33.790], [-84.395, 33.790], [-84.395, 33.762]]]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": { "name": "Buckhead", "risk_score": 0.15, "risk_level": "Low", "prediction": "Stable" },
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [[[-84.380, 33.830], [-84.350, 33.830], [-84.350, 33.865], [-84.380, 33.865], [-84.380, 33.830]]]
+          }
+        }
+      ]
     };
 
     // MARTA Stops (Downtown area sample)
@@ -469,6 +562,42 @@
         }
       });
 
+      // Add risk prediction layer (hidden by default)
+      map.addSource('risk', {
+        type: 'geojson',
+        data: riskPredictions
+      });
+
+      map.addLayer({
+        id: 'risk-fill',
+        type: 'fill',
+        source: 'risk',
+        layout: { 'visibility': 'none' },
+        paint: {
+          'fill-color': [
+            'interpolate',
+            ['linear'],
+            ['get', 'risk_score'],
+            0.0, '#1a9850',
+            0.4, '#fee08b',
+            0.7, '#d73027'
+          ],
+          'fill-opacity': 0.6
+        }
+      });
+
+      map.addLayer({
+        id: 'risk-outline',
+        type: 'line',
+        source: 'risk',
+        layout: { 'visibility': 'none' },
+        paint: {
+          'line-color': '#333',
+          'line-width': 2,
+          'line-dasharray': [3, 2]
+        }
+      });
+
       // Click handlers for popups
       map.on('click', 'tracts-fill', (e) => {
         const props = e.features[0].properties;
@@ -507,6 +636,22 @@
           .addTo(map);
       });
 
+      map.on('click', 'risk-fill', (e) => {
+        const props = e.features[0].properties;
+        const riskColor = props.risk_score >= 0.7 ? '#d73027' : props.risk_score >= 0.4 ? '#f57c00' : '#1a9850';
+        new maplibregl.Popup()
+          .setLngLat(e.lngLat)
+          .setHTML(`
+            <div class="popup-title">🤖 Model Prediction</div>
+            <div><strong>Tract:</strong> ${props.name}</div>
+            <div><strong>Risk Score:</strong> <span style="color:${riskColor};font-weight:bold">${(props.risk_score * 100).toFixed(0)}%</span></div>
+            <div><strong>Risk Level:</strong> ${props.risk_level}</div>
+            <div><strong>Prediction:</strong> ${props.prediction}</div>
+            <div style="font-size:10px;color:#888;margin-top:6px">Random Forest + XGBoost ensemble</div>
+          `)
+          .addTo(map);
+      });
+
       // Cursor changes
       map.on('mouseenter', 'tracts-fill', () => map.getCanvas().style.cursor = 'pointer');
       map.on('mouseleave', 'tracts-fill', () => map.getCanvas().style.cursor = '');
@@ -514,10 +659,12 @@
       map.on('mouseleave', 'stops-circle', () => map.getCanvas().style.cursor = '');
       map.on('mouseenter', 'isochrone-fill', () => map.getCanvas().style.cursor = 'pointer');
       map.on('mouseleave', 'isochrone-fill', () => map.getCanvas().style.cursor = '');
+      map.on('mouseenter', 'risk-fill', () => map.getCanvas().style.cursor = 'pointer');
+      map.on('mouseleave', 'risk-fill', () => map.getCanvas().style.cursor = '');
     });
 
     // Layer toggle function
-    const layerVisibility = { tracts: true, isochrone: true, stops: true };
+    const layerVisibility = { tracts: true, isochrone: true, stops: true, risk: false };
 
     function toggleLayer(layer) {
       layerVisibility[layer] = !layerVisibility[layer];
@@ -532,6 +679,9 @@
         map.setLayoutProperty('isochrone-outline', 'visibility', visibility);
       } else if (layer === 'stops') {
         map.setLayoutProperty('stops-circle', 'visibility', visibility);
+      } else if (layer === 'risk') {
+        map.setLayoutProperty('risk-fill', 'visibility', visibility);
+        map.setLayoutProperty('risk-outline', 'visibility', visibility);
       }
 
       btn.classList.toggle('active', layerVisibility[layer]);

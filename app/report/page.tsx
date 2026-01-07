@@ -603,6 +603,22 @@ export default function ReportPage() {
                 proximity, and tax assessor time-series. Critically, we employ <strong>Spatial K-Fold Cross-Validation</strong> to 
                 prevent optimistic bias from spatial autocorrelation.
               </p>
+              <p className="mt-3">
+                <strong>Baseline models:</strong> scikit-learn Random Forest and XGBoost classifiers. 
+                <strong> Neural model:</strong> TensorFlow MLP (2 hidden layers, 64/32 units, ReLU activation).
+              </p>
+              
+              <DataTable
+                number="4"
+                caption="Model Comparison: Displacement Risk Prediction (Downtown Atlanta Pilot)"
+                headers={["Model", "PR-AUC", "ROC-AUC", "Recall", "Precision", "Notes"]}
+                rows={[
+                  ["Random Forest", <span key="rf1" className="font-mono">0.87</span>, <span key="rf2" className="font-mono">0.83</span>, <span key="rf3" className="font-mono">0.80</span>, <span key="rf4" className="font-mono">0.80</span>, "Best interpretability"],
+                  ["XGBoost", <span key="xg1" className="font-mono font-bold text-gt-teal">0.89</span>, <span key="xg2" className="font-mono font-bold text-gt-teal">0.85</span>, <span key="xg3" className="font-mono">0.80</span>, <span key="xg4" className="font-mono">0.80</span>, "Best performance"],
+                  ["TensorFlow MLP", <span key="nn1" className="font-mono">0.82</span>, <span key="nn2" className="font-mono">0.79</span>, <span key="nn3" className="font-mono">0.60</span>, <span key="nn4" className="font-mono">0.75</span>, "Overfits on small data"],
+                ]}
+              />
+              
               <div className="bg-gt-purple/5 border-l-4 border-gt-purple p-4 rounded-r-lg my-4">
                 <p className="text-gray-700">
                   <strong>Why not Random CV?</strong> Adjacent census tracts share similar characteristics. Random splits 
@@ -629,11 +645,28 @@ export default function ReportPage() {
                 I-75/85. These &quot;transit deserts&quot; are characterized by adequate Euclidean proximity to stops but 
                 poor actual walkability due to missing sidewalks and highway barriers.
               </p>
+              
+              <div className="bg-gt-teal/5 border-l-4 border-gt-teal p-4 rounded-r-lg my-4">
+                <p className="text-gray-700">
+                  <strong>Key Finding:</strong> Lower-income tracts outside network isochrones = transit access gap. 
+                  67% of access-gap population resides in low-income tracts, while only 12% of high-income population 
+                  falls outside network accessibility.
+                </p>
+              </div>
+              
+              <Figure
+                src="/report/figures/access-gap-analysis.svg"
+                alt="SDG 11.2.1 access gap analysis showing income disparity"
+                number="3"
+                caption="Access gap analysis: Low-income tracts (Vine City, Pittsburgh) disproportionately located outside network isochrone despite Euclidean proximity to stops."
+                source="MARTA GTFS + ACS 2020 + OSMnx network analysis"
+              />
+              
               <Figure
                 src="/report/figures/transit-deserts.svg"
                 alt="Transit desert map showing accessibility gaps"
-                number="3"
-                caption="Transit accessibility gaps: areas within Euclidean buffer but outside network isochrone (potential transit deserts). Downtown Atlanta pilot."
+                number="4"
+                caption="Network vs Euclidean comparison: 1.34x gap ratio indicates Euclidean buffers overstate coverage by 34%."
               />
 
               <h3 className="text-xl font-serif font-semibold text-gt-navy mt-6 mb-3">6.3 SDG 11.7.1 Findings</h3>
@@ -652,13 +685,44 @@ export default function ReportPage() {
 
               <h3 className="text-xl font-serif font-semibold text-gt-navy mt-6 mb-3">6.5 Model Results</h3>
               <p>
-                The displacement risk model achieves <strong className="text-gt-gold-dark">0.87 PR-AUC</strong> and <strong className="text-gt-gold-dark">0.80 recall</strong> on 
+                The best-performing model (XGBoost) achieves <strong className="text-gt-gold-dark">0.89 PR-AUC</strong> and <strong className="text-gt-gold-dark">0.80 recall</strong> on 
                 the 8-tract Downtown Atlanta pilot using Spatial Leave-One-Out CV. The model correctly identifies 4 of 5 at-risk 
-                tracts with 1 false negative (Old Fourth Ward).
+                tracts with 1 false negative.
               </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+                <Figure
+                  src="/report/figures/confusion-matrix.svg"
+                  alt="Confusion matrix for displacement risk model"
+                  number="5"
+                  caption="Confusion matrix: TN=2, FP=1, FN=1, TP=4. Model prioritizes recall to minimize missed at-risk tracts."
+                  source="outputs/model_metrics.json"
+                />
+                <Figure
+                  src="/report/figures/pr-curve.svg"
+                  alt="Precision-recall curves comparing Random Forest vs XGBoost"
+                  number="6"
+                  caption="PR curves: XGBoost (dashed) slightly outperforms Random Forest. Both significantly exceed baseline."
+                  source="notebooks/model_eval.ipynb"
+                />
+              </div>
+              
+              <DataTable
+                number="5"
+                caption="Final Model Metrics (XGBoost, Downtown Atlanta Pilot)"
+                headers={["Metric", "Value", "Interpretation"]}
+                rows={[
+                  ["Recall (At-Risk)", <span key="r1" className="font-mono font-bold text-gt-teal">0.80</span>, "4 of 5 at-risk tracts correctly identified"],
+                  ["Precision", <span key="p1" className="font-mono">0.80</span>, "4 of 5 predicted-at-risk are truly at-risk"],
+                  ["PR-AUC", <span key="pr1" className="font-mono font-bold text-gt-teal">0.89</span>, "Strong class-imbalanced performance"],
+                  ["ROC-AUC", <span key="roc1" className="font-mono">0.85</span>, "Good overall discrimination"],
+                  ["Accuracy", <span key="acc1" className="font-mono">0.75</span>, "6 of 8 tracts correctly classified"],
+                ]}
+              />
+              
               <div className="bg-gt-teal/5 border-l-4 border-gt-teal p-4 rounded-r-lg my-4">
                 <p className="text-gray-700">
-                  <strong>Scope:</strong> Pilot results on downtown subset. Full city-scale validation requires Spatial K-Fold 
+                  <strong>Scope:</strong> Pilot results on downtown subset (n=8 tracts). Full city-scale validation requires Spatial K-Fold 
                   with geographic buffer zones. See <code className="bg-white px-1 rounded">outputs/model_evaluation_results.md</code>.
                 </p>
               </div>

@@ -122,13 +122,14 @@ This portfolio documents undergraduate research focused on **Smart Cities and Ur
 
 | Metric | Value | Notes |
 |--------|-------|-------|
-| **Transit Coverage (SDG 11.2.1)** | 58% | Population within 500m bus / 1000m rail |
+| **Transit Coverage (SDG 11.2.1)** | 58% | Population within 500m bus / 1000m rail (network distance) |
+| **Access Gap** | 1.34x | Euclidean buffers overstate coverage by 34% |
 | **Open Space (SDG 11.7.1)** | 12% | Built-up area that is public open space |
-| **Routing Speedup** | ~30x | Pandana vs NetworkX for shortest paths |
-| **Model PR-AUC** | 0.87 | Displacement risk prediction |
+| **Routing Speedup** | ~30x | Pandana vs NetworkX for shortest-path queries |
+| **Best Model PR-AUC** | 0.89 | XGBoost displacement risk prediction |
 | **Model Recall** | 0.80 | Correctly identifies 4/5 at-risk tracts |
 
-*Scope: Downtown Atlanta pilot (8 census tracts). See `/report` for methodology.*
+*Scope: Downtown Atlanta pilot (8 census tracts). See `/report` for full methodology and model comparison.*
 
 ## 🗺️ Atlanta SDG Portfolio Project
 

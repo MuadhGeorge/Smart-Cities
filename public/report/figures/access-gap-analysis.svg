@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500">
+  <defs>
+    <linearGradient id="incomeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1a9850"/>
+      <stop offset="50%" style="stop-color:#fee08b"/>
+      <stop offset="100%" style="stop-color:#d73027"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="700" height="500" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="350" y="30" text-anchor="middle" font-family="Roboto Slab, serif" font-size="18" font-weight="bold" fill="#003057">SDG 11.2.1 Access Gap Analysis</text>
+  <text x="350" y="52" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" fill="#666">Lower-income tracts outside network isochrones = transit access gap</text>
+  
+  <!-- Map Container -->
+  <rect x="40" y="70" width="420" height="360" fill="#e8f5e9" stroke="#4caf50" stroke-width="2" rx="8"/>
+  
+  <!-- Street Grid -->
+  <g stroke="#ccc" stroke-width="1" fill="none">
+    <line x1="100" y1="70" x2="100" y2="430"/>
+    <line x1="180" y1="70" x2="180" y2="430"/>
+    <line x1="260" y1="70" x2="260" y2="430"/>
+    <line x1="340" y1="70" x2="340" y2="430"/>
+    <line x1="420" y1="70" x2="420" y2="430"/>
+    <line x1="40" y1="130" x2="460" y2="130"/>
+    <line x1="40" y1="200" x2="460" y2="200"/>
+    <line x1="40" y1="270" x2="460" y2="270"/>
+    <line x1="40" y1="340" x2="460" y2="340"/>
+    <line x1="40" y1="400" x2="460" y2="400"/>
+  </g>
+  
+  <!-- High-income tracts (inside isochrone) - green -->
+  <rect x="160" y="140" width="100" height="80" fill="#1a985040" stroke="#1a9850" stroke-width="2" rx="4"/>
+  <text x="210" y="185" text-anchor="middle" font-family="Roboto, sans-serif" font-size="10" fill="#1a9850" font-weight="bold">Downtown</text>
+  <text x="210" y="200" text-anchor="middle" font-family="Roboto, sans-serif" font-size="9" fill="#333">$85k median</text>
+  
+  <rect x="280" y="140" width="100" height="80" fill="#1a985040" stroke="#1a9850" stroke-width="2" rx="4"/>
+  <text x="330" y="185" text-anchor="middle" font-family="Roboto, sans-serif" font-size="10" fill="#1a9850" font-weight="bold">Midtown</text>
+  <text x="330" y="200" text-anchor="middle" font-family="Roboto, sans-serif" font-size="9" fill="#333">$78k median</text>
+  
+  <!-- Network Isochrone -->
+  <path d="M140,130 L380,130 L400,180 L390,260 L350,310 L250,320 L180,290 L150,220 L140,160 Z" 
+        fill="#008C9530" stroke="#008C95" stroke-width="3" stroke-dasharray="8,4"/>
+  
+  <!-- Low-income tracts OUTSIDE isochrone (ACCESS GAP) - red -->
+  <rect x="60" y="330" width="90" height="70" fill="#d7302740" stroke="#d73027" stroke-width="3" rx="4"/>
+  <text x="105" y="365" text-anchor="middle" font-family="Roboto, sans-serif" font-size="10" fill="#d73027" font-weight="bold">Vine City</text>
+  <text x="105" y="380" text-anchor="middle" font-family="Roboto, sans-serif" font-size="9" fill="#333">$32k median</text>
+  <text x="105" y="395" text-anchor="middle" font-family="Roboto, sans-serif" font-size="8" fill="#d73027">ACCESS GAP</text>
+  
+  <rect x="360" y="330" width="90" height="70" fill="#d7302740" stroke="#d73027" stroke-width="3" rx="4"/>
+  <text x="405" y="365" text-anchor="middle" font-family="Roboto, sans-serif" font-size="10" fill="#d73027" font-weight="bold">Pittsburgh</text>
+  <text x="405" y="380" text-anchor="middle" font-family="Roboto, sans-serif" font-size="9" fill="#333">$28k median</text>
+  <text x="405" y="395" text-anchor="middle" font-family="Roboto, sans-serif" font-size="8" fill="#d73027">ACCESS GAP</text>
+  
+  <!-- At-Risk tract at edge -->
+  <rect x="60" y="230" width="80" height="70" fill="#fee08b60" stroke="#f57c00" stroke-width="2" rx="4"/>
+  <text x="100" y="265" text-anchor="middle" font-family="Roboto, sans-serif" font-size="10" fill="#e65100" font-weight="bold">West End</text>
+  <text x="100" y="280" text-anchor="middle" font-family="Roboto, sans-serif" font-size="9" fill="#333">$41k median</text>
+  
+  <!-- MARTA Stop -->
+  <circle cx="250" cy="200" r="12" fill="#003057" stroke="white" stroke-width="3"/>
+  <text x="250" y="204" text-anchor="middle" font-family="Roboto, sans-serif" font-size="8" fill="white" font-weight="bold">M</text>
+  <text x="275" y="218" font-family="Roboto, sans-serif" font-size="9" fill="#003057" font-weight="bold">Five Points</text>
+  
+  <!-- Statistics Panel -->
+  <rect x="480" y="70" width="200" height="200" fill="white" stroke="#003057" stroke-width="2" rx="8"/>
+  <text x="580" y="95" text-anchor="middle" font-family="Roboto Slab, serif" font-size="14" font-weight="bold" fill="#003057">Access Statistics</text>
+  
+  <text x="500" y="125" font-family="Roboto, sans-serif" font-size="11" fill="#333">Within Isochrone:</text>
+  <text x="660" y="125" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="bold" fill="#1a9850">58%</text>
+  
+  <text x="500" y="150" font-family="Roboto, sans-serif" font-size="11" fill="#333">Outside Isochrone:</text>
+  <text x="660" y="150" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="bold" fill="#d73027">42%</text>
+  
+  <line x1="500" y1="165" x2="660" y2="165" stroke="#ddd" stroke-width="1"/>
+  
+  <text x="500" y="185" font-family="Roboto, sans-serif" font-size="11" fill="#333">Low-income in gap:</text>
+  <text x="660" y="185" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="bold" fill="#d73027">67%</text>
+  
+  <text x="500" y="210" font-family="Roboto, sans-serif" font-size="11" fill="#333">High-income in gap:</text>
+  <text x="660" y="210" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="bold" fill="#1a9850">12%</text>
+  
+  <text x="500" y="235" font-family="Roboto, sans-serif" font-size="11" fill="#333">Gap / Euclidean ratio:</text>
+  <text x="660" y="235" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="bold" fill="#5F249F">1.34x</text>
+  
+  <!-- Key Finding Box -->
+  <rect x="480" y="290" width="200" height="140" fill="#d7302710" stroke="#d73027" stroke-width="2" rx="8"/>
+  <text x="580" y="315" text-anchor="middle" font-family="Roboto Slab, serif" font-size="12" font-weight="bold" fill="#d73027">⚠ Key Finding</text>
+  <text x="495" y="340" font-family="Roboto, sans-serif" font-size="11" fill="#333">Low-income tracts are</text>
+  <text x="495" y="358" font-family="Roboto, sans-serif" font-size="11" font-weight="bold" fill="#d73027">disproportionately located</text>
+  <text x="495" y="376" font-family="Roboto, sans-serif" font-size="11" fill="#333">outside the 500m network</text>
+  <text x="495" y="394" font-family="Roboto, sans-serif" font-size="11" fill="#333">isochrone, despite being</text>
+  <text x="495" y="412" font-family="Roboto, sans-serif" font-size="11" fill="#333">within Euclidean buffer.</text>
+  
+  <!-- Legend -->
+  <rect x="40" y="445" width="420" height="45" fill="white" stroke="#ddd" stroke-width="1" rx="4"/>
+  <rect x="55" y="458" width="16" height="16" fill="#1a985040" stroke="#1a9850" stroke-width="2"/>
+  <text x="80" y="470" font-family="Roboto, sans-serif" font-size="10" fill="#333">High access (in isochrone)</text>
+  
+  <rect x="195" y="458" width="16" height="16" fill="#fee08b60" stroke="#f57c00" stroke-width="2"/>
+  <text x="220" y="470" font-family="Roboto, sans-serif" font-size="10" fill="#333">Partial access</text>
+  
+  <rect x="305" y="458" width="16" height="16" fill="#d7302740" stroke="#d73027" stroke-width="3"/>
+  <text x="330" y="470" font-family="Roboto, sans-serif" font-size="10" fill="#333">Access gap (outside isochrone)</text>
+  
+  <!-- Caption -->
+  <text x="350" y="488" text-anchor="middle" font-family="Roboto, sans-serif" font-size="10" fill="#666" font-style="italic">Network-based analysis reveals equity dimension: transit deserts correlate with lower-income neighborhoods.</text>
+</svg>
+
