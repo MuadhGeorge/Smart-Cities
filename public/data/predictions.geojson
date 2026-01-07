@@ -1,79 +1,166 @@
 {
   "type": "FeatureCollection",
-  "note": "TODO: Replace with actual GeoJSON predictions. This is a placeholder.",
+  "name": "Atlanta Transit Accessibility Analysis",
   "features": [
     {
       "type": "Feature",
       "properties": {
-        "name": "Region A",
-        "score": 72,
-        "category": "medium"
+        "name": "Downtown Atlanta",
+        "score": 92,
+        "category": "high",
+        "typology": "Advanced Exclusive",
+        "transit_coverage": "High"
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [[
-          [-84.4, 33.7],
-          [-84.3, 33.7],
-          [-84.3, 33.8],
-          [-84.4, 33.8],
-          [-84.4, 33.7]
+          [-84.395, 33.748],
+          [-84.380, 33.748],
+          [-84.380, 33.762],
+          [-84.395, 33.762],
+          [-84.395, 33.748]
         ]]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "name": "Region B",
-        "score": 85,
-        "category": "high"
+        "name": "Midtown",
+        "score": 88,
+        "category": "high",
+        "typology": "Becoming Exclusive",
+        "transit_coverage": "High"
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [[
-          [-84.3, 33.7],
-          [-84.2, 33.7],
-          [-84.2, 33.8],
-          [-84.3, 33.8],
-          [-84.3, 33.7]
+          [-84.395, 33.762],
+          [-84.380, 33.762],
+          [-84.380, 33.790],
+          [-84.395, 33.790],
+          [-84.395, 33.762]
         ]]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "name": "Region C",
+        "name": "Old Fourth Ward",
+        "score": 75,
+        "category": "medium",
+        "typology": "Early Gentrification",
+        "transit_coverage": "Medium"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.370, 33.762],
+          [-84.355, 33.762],
+          [-84.355, 33.780],
+          [-84.370, 33.780],
+          [-84.370, 33.762]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "West End",
         "score": 58,
-        "category": "low"
+        "category": "low",
+        "typology": "At Risk",
+        "transit_coverage": "Medium"
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [[
-          [-84.4, 33.6],
-          [-84.3, 33.6],
-          [-84.3, 33.7],
-          [-84.4, 33.7],
-          [-84.4, 33.6]
+          [-84.420, 33.730],
+          [-84.400, 33.730],
+          [-84.400, 33.748],
+          [-84.420, 33.748],
+          [-84.420, 33.730]
         ]]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "name": "Region D",
-        "score": 91,
-        "category": "high"
+        "name": "Vine City",
+        "score": 52,
+        "category": "low",
+        "typology": "Low-Income/Susceptible",
+        "transit_coverage": "Low"
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [[
-          [-84.3, 33.6],
-          [-84.2, 33.6],
-          [-84.2, 33.7],
-          [-84.3, 33.7],
-          [-84.3, 33.6]
+          [-84.420, 33.748],
+          [-84.400, 33.748],
+          [-84.400, 33.762],
+          [-84.420, 33.762],
+          [-84.420, 33.748]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Westside BeltLine Area",
+        "score": 65,
+        "category": "medium",
+        "typology": "At Risk",
+        "transit_coverage": "Low"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.435, 33.748],
+          [-84.420, 33.748],
+          [-84.420, 33.775],
+          [-84.435, 33.775],
+          [-84.435, 33.748]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Pittsburgh",
+        "score": 48,
+        "category": "low",
+        "typology": "Low-Income/Susceptible",
+        "transit_coverage": "Low"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.420, 33.715],
+          [-84.400, 33.715],
+          [-84.400, 33.730],
+          [-84.420, 33.730],
+          [-84.420, 33.715]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Buckhead",
+        "score": 95,
+        "category": "high",
+        "typology": "Advanced Exclusive",
+        "transit_coverage": "High"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.380, 33.830],
+          [-84.350, 33.830],
+          [-84.350, 33.865],
+          [-84.380, 33.865],
+          [-84.380, 33.830]
         ]]
       }
     }
   ]
 }
-

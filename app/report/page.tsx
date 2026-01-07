@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { 
   FileText, 
@@ -61,7 +60,7 @@ function Figure({
 }) {
   return (
     <figure className="my-8 bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm">
-      <div className="relative w-full aspect-[16/10] bg-gray-50">
+      <div className="relative w-full bg-gray-50" style={{ paddingBottom: '62.5%' }}>
         {pending ? (
           <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-100 border-2 border-dashed border-gt-navy/30 m-4 rounded-lg">
             <Clock className="w-12 h-12 text-gt-gold-dark mb-3" />
@@ -69,11 +68,10 @@ function Figure({
             <span className="text-sm text-gray-500 mt-1">{src}</span>
           </div>
         ) : (
-          <Image
+          <img
             src={src}
             alt={alt}
-            fill
-            className="object-contain p-2"
+            className="absolute inset-0 w-full h-full object-contain p-4"
           />
         )}
       </div>

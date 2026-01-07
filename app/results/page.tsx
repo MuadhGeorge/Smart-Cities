@@ -231,28 +231,32 @@ export default function ResultsPage() {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <h4 className="font-semibold text-sm text-gray-600 mb-2">Model Type</h4>
-              <p className="text-gray-800">TODO: Specify model type (e.g., Random Forest, Linear Regression)</p>
+              <h4 className="font-semibold text-sm text-gray-600 mb-2">Accessibility Analysis</h4>
+              <p className="text-gray-800">Network-based isochrones using Pandana + OSMnx (SDG 11.2.1: 500m bus, 1000m rail)</p>
             </div>
             <div>
-              <h4 className="font-semibold text-sm text-gray-600 mb-2">Key Features</h4>
-              <p className="text-gray-800">TODO: List key features used in analysis</p>
+              <h4 className="font-semibold text-sm text-gray-600 mb-2">Key Data Sources</h4>
+              <p className="text-gray-800">MARTA GTFS, ARC Census Tracts, OpenStreetMap walk network, UDP typologies</p>
             </div>
             <div>
-              <h4 className="font-semibold text-sm text-gray-600 mb-2">Evaluation Metrics</h4>
-              <p className="text-gray-800">TODO: List metrics (e.g., R², RMSE, MAE)</p>
+              <h4 className="font-semibold text-sm text-gray-600 mb-2">Performance Metrics</h4>
+              <p className="text-gray-800">~30x speedup (Pandana vs NetworkX), network distance vs Euclidean</p>
             </div>
             <div>
               <h4 className="font-semibold text-sm text-gray-600 mb-2">Validation Approach</h4>
-              <p className="text-gray-800">TODO: Describe validation strategy</p>
+              <p className="text-gray-800">Spatial K-Fold Cross-Validation to prevent optimistic bias from spatial autocorrelation</p>
             </div>
           </div>
           <div className="mt-4 pt-4 border-t border-gray-200 text-sm text-gray-600">
             <p>
-              Edit methods details in{" "}
-              <code className="bg-gray-200 px-2 py-1 rounded font-mono text-xs">
-                app/results/page.tsx
-              </code>
+              See the{" "}
+              <a href="/report#methods" className="text-gt-navy hover:underline font-medium">
+                full methodology in the Report
+              </a>
+              {" "}and{" "}
+              <a href="/atlanta-sdg" className="text-gt-navy hover:underline font-medium">
+                interactive notebooks
+              </a>
             </p>
           </div>
         </Card>
@@ -265,22 +269,65 @@ export default function ResultsPage() {
           </h3>
           <Accordion title="Data Sources Used">
             <ul className="space-y-2 text-sm">
-              <li>
-                <a href="/sources" className="text-gt-navy hover:underline">
-                  View all data sources
+              <li className="flex items-center gap-2">
+                <span className="w-2 h-2 bg-gt-buzz-gold rounded-full" />
+                <strong>MARTA GTFS:</strong> Transit stops, routes, schedules
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="w-2 h-2 bg-gt-buzz-gold rounded-full" />
+                <strong>ARC Census Tracts:</strong> 2020 boundaries for Atlanta
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="w-2 h-2 bg-gt-buzz-gold rounded-full" />
+                <strong>UDP Typologies:</strong> Neighborhood change labels
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="w-2 h-2 bg-gt-buzz-gold rounded-full" />
+                <strong>OpenStreetMap:</strong> Walk network via OSMnx
+              </li>
+              <li className="mt-3">
+                <a href="/sources" className="text-gt-navy hover:underline font-medium">
+                  View all 15 sources →
                 </a>
               </li>
             </ul>
           </Accordion>
           <Accordion title="Analysis Notebooks">
-            <p className="text-sm text-gray-700">
-              TODO: Link to analysis notebooks or code repositories
-            </p>
+            <ul className="space-y-2 text-sm">
+              <li className="flex items-center gap-2">
+                <code className="bg-gray-100 px-2 py-0.5 rounded text-xs">notebooks/core_analysis.ipynb</code>
+                <span className="text-gray-600">— GTFS download, isochrone computation</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <code className="bg-gray-100 px-2 py-0.5 rounded text-xs">notebooks/benchmark.ipynb</code>
+                <span className="text-gray-600">— NetworkX vs Pandana timing</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <code className="bg-gray-100 px-2 py-0.5 rounded text-xs">notebooks/dashboard.ipynb</code>
+                <span className="text-gray-600">— Kepler.gl map builder</span>
+              </li>
+              <li className="mt-3">
+                <a href="/atlanta-sdg" className="text-gt-navy hover:underline font-medium">
+                  View Atlanta SDG Project →
+                </a>
+              </li>
+            </ul>
           </Accordion>
           <Accordion title="Validation Results">
-            <p className="text-sm text-gray-700">
-              TODO: Link to validation results and performance metrics
-            </p>
+            <ul className="space-y-2 text-sm text-gray-700">
+              <li className="flex items-center gap-2">
+                <span className="w-2 h-2 bg-green-500 rounded-full" />
+                <strong>Benchmark:</strong> ~30x speedup (Pandana vs NetworkX) — see <a href="/report#outcomes" className="text-gt-navy hover:underline">Report</a>
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="w-2 h-2 bg-blue-500 rounded-full" />
+                <strong>Validation Strategy:</strong> Spatial K-Fold CV prevents optimistic bias
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="w-2 h-2 bg-orange-500 rounded-full" />
+                <strong>Note:</strong> Forecasts are demonstrations with documented limitations
+              </li>
+            </ul>
           </Accordion>
         </div>
       </div>

@@ -1,42 +1,122 @@
 [
   {
     "title": "VIP Team 1270 — SDGs: Resilient Infrastructures and Sustainable Innovation",
-    "type": "paper",
-    "publisher": "Georgia Tech VIP",
-    "year": 2026,
+    "type": "tool",
+    "publisher": "Georgia Tech VIP Program",
+    "year": 2024,
     "url": "https://vip.gatech.edu/teams/entry/1270/",
-    "note": "Official VIP team page used to describe goals/methods/advisors."
+    "note": "Official VIP team page describing project goals, advisors, and research focus areas."
+  },
+  {
+    "title": "MARTA GTFS Static Feed",
+    "type": "dataset",
+    "publisher": "Metropolitan Atlanta Rapid Transit Authority",
+    "year": 2024,
+    "url": "https://itsmarta.com/app-developer-resources.aspx",
+    "note": "General Transit Feed Specification data including stops.txt, routes.txt, stop_times.txt for transit network topology."
+  },
+  {
+    "title": "ARC 2020 Census Tracts - City of Atlanta",
+    "type": "dataset",
+    "publisher": "Atlanta Regional Commission",
+    "year": 2020,
+    "url": "https://opendata.atlantaregional.com/datasets/coaplangis::2020-census-tracts-city-of-atlanta/about",
+    "note": "Census tract boundaries for demographic overlay and population-weighted accessibility calculations."
+  },
+  {
+    "title": "Atlanta Gentrification and Displacement Map",
+    "type": "dataset",
+    "publisher": "Urban Displacement Project",
+    "year": 2023,
+    "url": "https://www.urbandisplacement.org/maps/atlanta-gentrification-and-displacement/",
+    "note": "Validated neighborhood change typologies used for displacement risk analysis and model training labels."
+  },
+  {
+    "title": "SDG Indicator 11.2.1 Metadata",
+    "type": "paper",
+    "publisher": "United Nations Statistics Division",
+    "year": 2023,
+    "url": "https://unstats.un.org/sdgs/metadata/files/Metadata-11-02-01.pdf",
+    "note": "Official UN-Habitat methodology for measuring 'convenient access to public transport' - defines 500m/1000m thresholds."
+  },
+  {
+    "title": "SDG Indicator 11.7.1 Metadata",
+    "type": "paper",
+    "publisher": "UN-Habitat",
+    "year": 2023,
+    "url": "https://unstats.un.org/sdgs/metadata/files/Metadata-11-07-01.pdf",
+    "note": "Methodology for measuring 'average share of built-up area that is open space for public use'."
+  },
+  {
+    "title": "OSMnx: Python Package for Street Networks",
+    "type": "tool",
+    "publisher": "Geoff Boeing",
+    "year": 2017,
+    "url": "https://github.com/gboeing/osmnx",
+    "note": "Used to download and construct walk network from OpenStreetMap for network-based accessibility analysis."
+  },
+  {
+    "title": "Pandana: Pandas Network Analysis",
+    "type": "tool",
+    "publisher": "UrbanSim Inc.",
+    "year": 2024,
+    "url": "https://github.com/UDST/pandana",
+    "note": "High-performance C++ library for network accessibility queries. Uses Contraction Hierarchies for ~30x speedup."
+  },
+  {
+    "title": "Kepler.gl: Large-scale WebGL Geospatial Visualization",
+    "type": "tool",
+    "publisher": "Uber Technologies",
+    "year": 2024,
+    "url": "https://kepler.gl/",
+    "note": "Interactive dashboard creation tool. Supports large datasets via WebGL rendering and remote URL data loading."
+  },
+  {
+    "title": "spatial-kfold: Spatial Cross-Validation for Python",
+    "type": "tool",
+    "publisher": "Walid Ghariani",
+    "year": 2023,
+    "url": "https://pypi.org/project/spatial-kfold/",
+    "note": "Library for implementing Spatial K-Fold CV to prevent data leakage from spatial autocorrelation in predictive models."
   },
   {
     "title": "Georgia Tech Brand Guide — Colors",
     "type": "tool",
-    "publisher": "Georgia Tech",
-    "year": 2025,
+    "publisher": "Georgia Tech Institute Communications",
+    "year": 2024,
     "url": "https://brand.gatech.edu/our-look/colors",
-    "note": "Used for portfolio color system + accessibility rules."
+    "note": "Official color palette used for portfolio styling: Tech Gold, Navy Blue, accessible variants."
   },
   {
-    "title": "Georgia Tech Registrar — Calendar Archive",
-    "type": "tool",
-    "publisher": "Georgia Tech Registrar",
-    "year": 2025,
-    "url": "https://registrar.gatech.edu/info/calendar-archive",
-    "note": "Used to align timeline entries to academic terms."
-  },
-  {
-    "title": "Urban Displacement Project — Predicting Neighborhood Change Using Big Data and Machine Learning",
+    "title": "Gentrifying Atlanta: Investor Purchases of Rental Housing, Evictions, and Displacement",
     "type": "paper",
-    "publisher": "Urban Displacement Project",
-    "year": 2019,
-    "url": "https://www.urbandisplacement.org/",
-    "note": "Background reading for displacement/gentrification framing."
+    "publisher": "National Low Income Housing Coalition",
+    "year": 2023,
+    "url": "https://nlihc.org/sites/default/files/Gentrifying-Atlanta-Investor-Purchases-of-Rental-Housing-Evictions-and-the-Displacement-of-Black-Residents.pdf",
+    "note": "Research on investor activity as a leading indicator of displacement. Informed feature engineering for predictive model."
   },
   {
-    "title": "USDA — Food Access Research Atlas",
+    "title": "Forecasting Atlanta Gentrification with Transformers",
+    "type": "paper",
+    "publisher": "Georgia Tech SMARTech Repository",
+    "year": 2023,
+    "url": "https://repository.gatech.edu/bitstreams/4f09c172-4da5-423a-bf99-16ac11b749cb/download",
+    "note": "Related GT research on gentrification prediction using tax assessor time-series data."
+  },
+  {
+    "title": "USDA Food Access Research Atlas",
     "type": "dataset",
-    "publisher": "USDA ERS",
+    "publisher": "USDA Economic Research Service",
     "year": 2024,
     "url": "https://www.ers.usda.gov/data-products/food-access-research-atlas/",
-    "note": "Used for thinking about low-access areas and measurement choices."
+    "note": "Reference for low-access area measurement methodology. Informed thinking about accessibility thresholds."
+  },
+  {
+    "title": "ARC 21-County Population and Employment Dashboard",
+    "type": "dataset",
+    "publisher": "Atlanta Regional Commission",
+    "year": 2024,
+    "url": "https://atlantaregional.org/what-we-do/research-and-innovation/interactive-data-mapping-tools/",
+    "note": "Demographic data for population-weighted SDG indicator calculations."
   }
 ]

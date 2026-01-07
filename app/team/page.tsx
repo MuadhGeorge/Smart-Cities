@@ -61,11 +61,19 @@ export default function TeamPage() {
                   <ul className="space-y-2 text-sm text-gray-700">
                     <li className="flex items-start">
                       <span className="inline-block w-1.5 h-1.5 bg-gt-buzz-gold rounded-full mt-2 mr-2 flex-shrink-0" />
-                      TODO: Describe Khadijah&apos;s specific contributions
+                      Literature review on urban displacement and gentrification research methodologies
                     </li>
                     <li className="flex items-start">
                       <span className="inline-block w-1.5 h-1.5 bg-gt-buzz-gold rounded-full mt-2 mr-2 flex-shrink-0" />
-                      TODO: Add collaboration examples
+                      Co-development of equity-focused analysis framework
+                    </li>
+                    <li className="flex items-start">
+                      <span className="inline-block w-1.5 h-1.5 bg-gt-buzz-gold rounded-full mt-2 mr-2 flex-shrink-0" />
+                      Review and validation of demographic data processing
+                    </li>
+                    <li className="flex items-start">
+                      <span className="inline-block w-1.5 h-1.5 bg-gt-buzz-gold rounded-full mt-2 mr-2 flex-shrink-0" />
+                      Presentation preparation and report editing
                     </li>
                   </ul>
                 </div>
@@ -87,11 +95,19 @@ export default function TeamPage() {
                   <ul className="space-y-2 text-sm text-gray-700">
                     <li className="flex items-start">
                       <span className="inline-block w-1.5 h-1.5 bg-gt-buzz-gold rounded-full mt-2 mr-2 flex-shrink-0" />
-                      TODO: Describe Maymuna&apos;s specific contributions
+                      Research on environmental justice and urban heat exposure patterns
                     </li>
                     <li className="flex items-start">
                       <span className="inline-block w-1.5 h-1.5 bg-gt-buzz-gold rounded-full mt-2 mr-2 flex-shrink-0" />
-                      TODO: Add collaboration examples
+                      Data quality assessment and source verification
+                    </li>
+                    <li className="flex items-start">
+                      <span className="inline-block w-1.5 h-1.5 bg-gt-buzz-gold rounded-full mt-2 mr-2 flex-shrink-0" />
+                      Contributions to SDG 11.7.1 (public space) analysis design
+                    </li>
+                    <li className="flex items-start">
+                      <span className="inline-block w-1.5 h-1.5 bg-gt-buzz-gold rounded-full mt-2 mr-2 flex-shrink-0" />
+                      Final report review and methodology documentation
                     </li>
                   </ul>
                 </div>

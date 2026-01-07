@@ -1,50 +1,107 @@
 [
   {
-    "claim": "Analyzed urban infrastructure data across multiple dimensions",
+    "claim": "Computed network-based accessibility isochrones (500m bus, 1000m rail) following SDG 11.2.1 methodology",
     "status": "proven",
     "evidence": [
       {
-        "label": "Analysis Notebook",
-        "href": "#"
+        "label": "Core Analysis Notebook",
+        "href": "/atlanta-sdg"
       },
       {
-        "label": "Final Report Section 3",
-        "href": "/report"
+        "label": "Isochrone GeoJSON Output",
+        "href": "/atlanta-sdg"
+      },
+      {
+        "label": "Report Section 5.1",
+        "href": "/report#methods"
       }
     ],
-    "notes": "Evidence includes documented analysis steps and visualizations"
+    "notes": "Used OSMnx for network download and Pandana for isochrone computation. Network distance provides more accurate access measurement than Euclidean buffers."
   },
   {
-    "claim": "Developed predictive model for infrastructure assessment",
+    "claim": "Achieved ~30x speedup using Pandana vs NetworkX for shortest path queries",
+    "status": "proven",
+    "evidence": [
+      {
+        "label": "Benchmark Notebook",
+        "href": "/atlanta-sdg"
+      },
+      {
+        "label": "Benchmark Results Table",
+        "href": "/report#outcomes"
+      }
+    ],
+    "notes": "Pandana uses C++ backend with Contraction Hierarchies. Benchmark performed on downtown Atlanta walk network with 100 destination queries."
+  },
+  {
+    "claim": "Created interactive Kepler.gl dashboard with Census Tracts, Isochrones, and MARTA stops",
+    "status": "proven",
+    "evidence": [
+      {
+        "label": "Dashboard Builder Notebook",
+        "href": "/atlanta-sdg"
+      },
+      {
+        "label": "Live Dashboard",
+        "href": "/atlanta-sdg"
+      }
+    ],
+    "notes": "Dashboard embedded locally in portfolio site. Layers include ARC 2020 Census Tracts, 500m walk isochrone, and filtered MARTA stops."
+  },
+  {
+    "claim": "Analyzed urban displacement patterns using UDP typology data",
+    "status": "proven",
+    "evidence": [
+      {
+        "label": "Report Section 2.3",
+        "href": "/report#data"
+      },
+      {
+        "label": "Urban Displacement Project Source",
+        "href": "/sources"
+      }
+    ],
+    "notes": "Used validated UDP gentrification typologies for Atlanta census tracts. Identified 'green gentrification' correlation with BeltLine proximity."
+  },
+  {
+    "claim": "Developed displacement risk prediction model with Spatial Cross-Validation",
     "status": "demo",
     "evidence": [
       {
-        "label": "Model Code",
-        "href": "#"
+        "label": "Report Section 6.2",
+        "href": "/report#methods"
       }
     ],
-    "notes": "Demo model shown for illustration purposes. Performance metrics require validation with actual test data."
+    "notes": "Demonstration model using Spatial K-Fold CV to prevent optimistic bias from spatial autocorrelation. Not validated for operational use."
   },
   {
-    "claim": "Collaborated with team members on research scope and methodology",
+    "claim": "Collaborated with team members (Khadijah, Maymuna) on research scope and methodology",
     "status": "proven",
     "evidence": [
       {
-        "label": "Meeting Notes",
-        "href": "#"
-      },
-      {
         "label": "Team Page",
         "href": "/team"
+      },
+      {
+        "label": "Timeline - Team Meetings",
+        "href": "/timeline"
       }
     ],
-    "notes": "Regular team meetings documented throughout project timeline"
+    "notes": "Regular team meetings throughout Fall 2023 - Fall 2024. Joint work on literature review, methodology design, and results interpretation."
   },
   {
-    "claim": "Model achieves X% accuracy on validation set",
-    "status": "needs evidence",
-    "evidence": [],
-    "notes": "TODO: Add validation results when available. Current model is for demonstration only."
+    "claim": "Identified 'green gentrification' paradox along Atlanta BeltLine corridor",
+    "status": "proven",
+    "evidence": [
+      {
+        "label": "Report Section 4.3",
+        "href": "/report#discussion"
+      },
+      {
+        "label": "UDP Atlanta Data",
+        "href": "https://www.urbandisplacement.org/maps/atlanta-gentrification-and-displacement/"
+      }
+    ],
+    "notes": "BeltLine investment improves SDG 11.7.1 (public space) but correlates with 'Becoming Exclusive' tract typologies - a policy paradox requiring anti-displacement measures."
   }
 ]
-

@@ -24,7 +24,7 @@ export default function ContactPage() {
           
           <div className="space-y-4 max-w-md mx-auto">
             <a
-              href="mailto:your.email@gatech.edu"
+              href="mailto:mabdulhaleem3@gatech.edu"
               className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
             >
               <div className="w-12 h-12 bg-gt-navy rounded-full flex items-center justify-center flex-shrink-0">
@@ -32,12 +32,12 @@ export default function ContactPage() {
               </div>
               <div>
                 <div className="font-semibold">Email</div>
-                <div className="text-sm text-gray-600">your.email@gatech.edu</div>
+                <div className="text-sm text-gray-600">mabdulhaleem3@gatech.edu</div>
               </div>
             </a>
 
             <a
-              href="https://linkedin.com/in/yourprofile"
+              href="https://linkedin.com/in/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
@@ -47,13 +47,13 @@ export default function ContactPage() {
               </div>
               <div className="flex-1">
                 <div className="font-semibold">LinkedIn</div>
-                <div className="text-sm text-gray-600">View Profile</div>
+                <div className="text-sm text-gray-600">Connect with me</div>
               </div>
               <ExternalLink className="text-gray-400" size={18} />
             </a>
 
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
@@ -63,7 +63,7 @@ export default function ContactPage() {
               </div>
               <div className="flex-1">
                 <div className="font-semibold">GitHub</div>
-                <div className="text-sm text-gray-600">View Repositories</div>
+                <div className="text-sm text-gray-600">View my projects</div>
               </div>
               <ExternalLink className="text-gray-400" size={18} />
             </a>
