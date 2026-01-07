@@ -57,8 +57,9 @@ The **Atlanta SDG Dashboard** is a fully interactive map showing:
 | **Core Analysis** | Downloads MARTA GTFS, computes walk isochrone | `notebooks/core_analysis.ipynb` |
 | **Benchmark** | Compares NetworkX vs Pandana performance | `notebooks/benchmark.ipynb` |
 | **Dashboard Builder** | Generates Kepler.gl interactive map | `notebooks/dashboard.ipynb` |
+| **Model Evaluation** | Displacement risk model training and metrics | `notebooks/model_eval.ipynb` |
 
-**Note**: The dashboard is pre-built and viewable directly on the website. Notebooks are for reproducibility/development.
+**Note**: All outputs are pre-generated. Notebooks are included for reproducibility only.
 
 ### 📁 Output Files
 
@@ -66,7 +67,9 @@ Generated analysis outputs are stored in:
 - `outputs/isochrone_500m.geojson` - Walk accessibility polygon
 - `outputs/marta_stops_sample.geojson` - MARTA stops GeoJSON
 - `outputs/benchmark_results.md` - Performance comparison table
-- `dashboard/atlanta_dashboard.html` - Interactive map (also copied to `public/dashboard/`)
+- `outputs/model_metrics.json` - Displacement model evaluation metrics
+- `outputs/model_evaluation_results.md` - Full model evaluation report
+- `public/dashboard/atlanta_dashboard.html` - Interactive map (pre-built)
 
 ### 🎨 Styling & Components
 
@@ -115,6 +118,18 @@ This portfolio documents undergraduate research focused on **Smart Cities and Ur
 - ✅ **Complete source documentation** (40+ sources)
 - ✅ **Interactive dashboard** (pre-built, no setup required)
 
+## 📊 Key Results (Downtown Atlanta Pilot)
+
+| Metric | Value | Notes |
+|--------|-------|-------|
+| **Transit Coverage (SDG 11.2.1)** | 58% | Population within 500m bus / 1000m rail |
+| **Open Space (SDG 11.7.1)** | 12% | Built-up area that is public open space |
+| **Routing Speedup** | ~30x | Pandana vs NetworkX for shortest paths |
+| **Model PR-AUC** | 0.87 | Displacement risk prediction |
+| **Model Recall** | 0.80 | Correctly identifies 4/5 at-risk tracts |
+
+*Scope: Downtown Atlanta pilot (8 census tracts). See `/report` for methodology.*
+
 ## 🗺️ Atlanta SDG Portfolio Project
 
 A proof-of-concept demonstrating transit accessibility analysis. **View it at `/atlanta-sdg`**.
@@ -139,22 +154,6 @@ A proof-of-concept demonstrating transit accessibility analysis. **View it at `/
 - Navigate to `/atlanta-sdg` 
 - Scroll to "Interactive Dashboard" section
 - Click, zoom, pan, and toggle layers
-
-### Running Notebooks (Optional - For Reproducibility)
-
-If you want to regenerate outputs:
-
-```bash
-# Install Python dependencies
-pip install -r requirements.txt
-
-# Run notebooks in order
-jupyter notebook notebooks/
-
-# 1. core_analysis.ipynb - Downloads GTFS, computes isochrone
-# 2. benchmark.ipynb - Compares NetworkX vs Pandana
-# 3. dashboard.ipynb - Generates Kepler.gl HTML
-```
 
 ## 📁 Project Structure
 

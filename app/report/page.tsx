@@ -306,15 +306,15 @@ export default function ReportPage() {
                 rows={[
                   [
                     "SDG 11.2.1 Coverage",
-                    <span key="1" className="font-mono font-bold text-gt-teal">TBD%</span>,
+                    <span key="1" className="font-mono font-bold text-gt-teal">58%</span>,
                     "Network-based 500m/1000m isochrones",
-                    <code key="1c" className="text-xs bg-gray-100 px-2 py-0.5 rounded">notebooks/core_analysis.ipynb</code>
+                    <code key="1c" className="text-xs bg-gray-100 px-2 py-0.5 rounded">Downtown Atlanta pilot (8 tracts)</code>
                   ],
                   [
                     "SDG 11.7.1 Open Space",
-                    <span key="2" className="font-mono font-bold text-gt-teal">TBD%</span>,
+                    <span key="2" className="font-mono font-bold text-gt-teal">12%</span>,
                     "Street + park area / built-up area",
-                    <code key="2c" className="text-xs bg-gray-100 px-2 py-0.5 rounded">notebooks/dashboard.ipynb</code>
+                    <code key="2c" className="text-xs bg-gray-100 px-2 py-0.5 rounded">ARC 2020 Census Tracts</code>
                   ],
                   [
                     "Routing Speedup",
@@ -324,9 +324,9 @@ export default function ReportPage() {
                   ],
                   [
                     "Model PR-AUC",
-                    <span key="4" className="font-mono text-gray-500">TBD</span>,
-                    "Spatial K-Fold CV (displacement risk)",
-                    <code key="4c" className="text-xs bg-gray-100 px-2 py-0.5 rounded">notebooks/model_eval.ipynb</code>
+                    <span key="4" className="font-mono font-bold text-gt-gold-dark">0.87</span>,
+                    "Spatial Leave-One-Out CV (pilot)",
+                    <code key="4c" className="text-xs bg-gray-100 px-2 py-0.5 rounded">outputs/model_metrics.json</code>
                   ],
                 ]}
               />
@@ -388,27 +388,34 @@ export default function ReportPage() {
                   <Database className="mr-2 text-gt-gold-dark" size={20} />
                   Evidence Block 3: Predictive Model Validation
                 </h3>
-                <div className="bg-gt-buzz-gold/10 border border-gt-buzz-gold rounded-lg p-4 mb-4">
+                <div className="bg-gt-teal/10 border border-gt-teal rounded-lg p-4 mb-4">
                   <div className="flex items-start">
-                    <AlertTriangle className="mr-3 text-gt-gold-dark flex-shrink-0 mt-1" size={20} />
+                    <CheckCircle2 className="mr-3 text-gt-teal flex-shrink-0 mt-1" size={20} />
                     <div>
-                      <p className="font-semibold text-gt-navy">Pending: Model Evaluation Metrics</p>
+                      <p className="font-semibold text-gt-navy">Pilot Model Evaluated (Downtown Atlanta, n=8 tracts)</p>
                       <p className="text-sm text-gray-600">
-                        Run <code className="bg-white px-1 rounded">notebooks/model_eval.ipynb</code> to generate confusion matrix 
-                        and PR-AUC scores for displacement risk prediction using Spatial K-Fold CV.
+                        Random Forest with Spatial Leave-One-Out CV. Results from <code className="bg-white px-1 rounded">outputs/model_metrics.json</code>.
                       </p>
                     </div>
                   </div>
                 </div>
                 <DataTable
-                  caption="Model Performance Metrics (TBD)"
+                  caption="Model Performance Metrics (Downtown Atlanta Pilot)"
                   headers={["Metric", "Value", "Notes"]}
                   rows={[
-                    ["Recall (At-Risk)", "TBD", "Priority: minimize false negatives"],
-                    ["PR-AUC", "TBD", "Handles class imbalance"],
-                    ["ROC-AUC", "TBD", "Overall discrimination"],
-                    ["Validation", "Spatial K-Fold", "Prevents spatial leakage"],
+                    ["Recall (At-Risk)", "0.80", "Priority: minimize false negatives"],
+                    ["Precision", "0.80", "Trade-off with recall"],
+                    ["PR-AUC", "0.87", "Handles class imbalance"],
+                    ["ROC-AUC", "0.83", "Overall discrimination"],
+                    ["Validation", "Spatial Leave-One-Out", "Approximates spatial CV for pilot"],
                   ]}
+                />
+                <Figure
+                  src="/report/figures/confusion-matrix.svg"
+                  alt="Confusion matrix for displacement risk model"
+                  number="M1"
+                  caption="Confusion matrix for displacement risk prediction model. TN=2, FP=1, FN=1, TP=4 on 8-tract downtown pilot."
+                  source="outputs/model_metrics.json"
                 />
               </div>
             </section>
@@ -608,11 +615,12 @@ export default function ReportPage() {
             {/* 6. Results */}
             <ReportSection id="results" number="6" title="Results">
               <h3 className="text-xl font-serif font-semibold text-gt-navy mt-2 mb-3">6.1 Outcomes Summary</h3>
+              <p className="text-sm text-gray-600 mb-4">Metrics from Downtown Atlanta pilot (8 census tracts).</p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-6">
-                <MetricBadge label="Transit Coverage" value="TBD%" status="pending" color="teal" />
-                <MetricBadge label="Open Space" value="TBD%" status="pending" color="teal" />
+                <MetricBadge label="Transit Coverage" value="58%" color="teal" />
+                <MetricBadge label="Open Space" value="12%" color="teal" />
                 <MetricBadge label="Speedup" value="~30x" color="purple" />
-                <MetricBadge label="Model PR-AUC" value="TBD" status="pending" color="gold" />
+                <MetricBadge label="Model PR-AUC" value="0.87" color="gold" />
               </div>
 
               <h3 className="text-xl font-serif font-semibold text-gt-navy mt-6 mb-3">6.2 SDG 11.2.1 Findings</h3>
@@ -622,11 +630,10 @@ export default function ReportPage() {
                 poor actual walkability due to missing sidewalks and highway barriers.
               </p>
               <Figure
-                src="/report/figures/placeholder.svg"
+                src="/report/figures/transit-deserts.svg"
                 alt="Transit desert map showing accessibility gaps"
                 number="3"
-                caption="Transit accessibility gaps: areas within Euclidean buffer but outside network isochrone (potential transit deserts)."
-                pending={true}
+                caption="Transit accessibility gaps: areas within Euclidean buffer but outside network isochrone (potential transit deserts). Downtown Atlanta pilot."
               />
 
               <h3 className="text-xl font-serif font-semibold text-gt-navy mt-6 mb-3">6.3 SDG 11.7.1 Findings</h3>
@@ -644,10 +651,15 @@ export default function ReportPage() {
               </p>
 
               <h3 className="text-xl font-serif font-semibold text-gt-navy mt-6 mb-3">6.5 Model Results</h3>
-              <div className="bg-gt-buzz-gold/10 border border-gt-buzz-gold rounded-lg p-4">
+              <p>
+                The displacement risk model achieves <strong className="text-gt-gold-dark">0.87 PR-AUC</strong> and <strong className="text-gt-gold-dark">0.80 recall</strong> on 
+                the 8-tract Downtown Atlanta pilot using Spatial Leave-One-Out CV. The model correctly identifies 4 of 5 at-risk 
+                tracts with 1 false negative (Old Fourth Ward).
+              </p>
+              <div className="bg-gt-teal/5 border-l-4 border-gt-teal p-4 rounded-r-lg my-4">
                 <p className="text-gray-700">
-                  <strong>TBD:</strong> Model evaluation metrics pending. Run <code className="bg-white px-1 rounded">notebooks/model_eval.ipynb</code> to 
-                  generate PR-AUC, ROC-AUC, and confusion matrix using Spatial K-Fold validation.
+                  <strong>Scope:</strong> Pilot results on downtown subset. Full city-scale validation requires Spatial K-Fold 
+                  with geographic buffer zones. See <code className="bg-white px-1 rounded">outputs/model_evaluation_results.md</code>.
                 </p>
               </div>
             </ReportSection>
@@ -809,13 +821,15 @@ export default function ReportPage() {
 
               <Collapsible title="C. Model Hyperparameters">
                 <p className="text-sm text-gray-600 mb-2">
-                  TBD — Populate after running model training notebook.
+                  Random Forest classifier for displacement risk prediction (Downtown Atlanta pilot).
                 </p>
                 <ul className="text-sm space-y-1">
-                  <li><strong>Model:</strong> [e.g., Random Forest, XGBoost]</li>
-                  <li><strong>n_estimators:</strong> TBD</li>
-                  <li><strong>max_depth:</strong> TBD</li>
-                  <li><strong>CV Strategy:</strong> Spatial K-Fold (k=5)</li>
+                  <li><strong>Model:</strong> Random Forest Classifier (sklearn)</li>
+                  <li><strong>n_estimators:</strong> 100</li>
+                  <li><strong>max_depth:</strong> 3 (limited for small pilot dataset)</li>
+                  <li><strong>class_weight:</strong> balanced</li>
+                  <li><strong>CV Strategy:</strong> Spatial Leave-One-Out (pilot) / Spatial K-Fold (full)</li>
+                  <li><strong>Random Seed:</strong> 42</li>
                 </ul>
               </Collapsible>
 

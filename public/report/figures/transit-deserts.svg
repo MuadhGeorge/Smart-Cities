@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450">
+  <defs>
+    <linearGradient id="accessGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ef5350"/>
+      <stop offset="50%" style="stop-color:#ffeb3b"/>
+      <stop offset="100%" style="stop-color:#4caf50"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="450" fill="#f5f5f5"/>
+  
+  <!-- Title -->
+  <text x="300" y="30" text-anchor="middle" font-family="Roboto Slab, serif" font-size="18" font-weight="bold" fill="#003057">Transit Accessibility Gaps - Downtown Atlanta</text>
+  <text x="300" y="50" text-anchor="middle" font-family="Roboto, sans-serif" font-size="12" fill="#666">Network vs Euclidean Buffer Comparison (SDG 11.2.1)</text>
+  
+  <!-- Map Area -->
+  <rect x="50" y="70" width="500" height="300" fill="#e8f5e9" stroke="#4caf50" stroke-width="2" rx="8"/>
+  
+  <!-- Street Grid Pattern -->
+  <g stroke="#bbb" stroke-width="1" fill="none">
+    <line x1="100" y1="70" x2="100" y2="370"/>
+    <line x1="200" y1="70" x2="200" y2="370"/>
+    <line x1="300" y1="70" x2="300" y2="370"/>
+    <line x1="400" y1="70" x2="400" y2="370"/>
+    <line x1="500" y1="70" x2="500" y2="370"/>
+    <line x1="50" y1="120" x2="550" y2="120"/>
+    <line x1="50" y1="170" x2="550" y2="170"/>
+    <line x1="50" y1="220" x2="550" y2="220"/>
+    <line x1="50" y1="270" x2="550" y2="270"/>
+    <line x1="50" y1="320" x2="550" y2="320"/>
+  </g>
+  
+  <!-- Euclidean Buffer (dashed circle) -->
+  <circle cx="300" cy="220" r="100" fill="none" stroke="#003057" stroke-width="2" stroke-dasharray="8,4"/>
+  <text x="395" y="145" font-family="Roboto, sans-serif" font-size="10" fill="#003057">500m Euclidean</text>
+  
+  <!-- Network Isochrone (irregular polygon) -->
+  <path d="M260,140 L320,145 L360,180 L370,220 L355,270 L300,300 L250,285 L220,240 L230,180 Z" 
+        fill="#4caf5040" stroke="#4caf50" stroke-width="3"/>
+  <text x="180" y="155" font-family="Roboto, sans-serif" font-size="10" fill="#4caf50" font-weight="bold">500m Network</text>
+  
+  <!-- Transit Desert Areas (gaps) -->
+  <ellipse cx="420" cy="180" rx="40" ry="30" fill="#ef535080" stroke="#ef5350" stroke-width="2"/>
+  <ellipse cx="180" cy="270" rx="35" ry="25" fill="#ef535080" stroke="#ef5350" stroke-width="2"/>
+  <text x="420" y="185" text-anchor="middle" font-family="Roboto, sans-serif" font-size="9" fill="#c62828" font-weight="bold">Gap</text>
+  <text x="180" y="275" text-anchor="middle" font-family="Roboto, sans-serif" font-size="9" fill="#c62828" font-weight="bold">Gap</text>
+  
+  <!-- MARTA Stop -->
+  <circle cx="300" cy="220" r="10" fill="#003057" stroke="white" stroke-width="2"/>
+  <text x="315" y="240" font-family="Roboto, sans-serif" font-size="10" fill="#003057" font-weight="bold">Five Points</text>
+  
+  <!-- Legend -->
+  <rect x="50" y="385" width="500" height="55" fill="white" stroke="#ddd" stroke-width="1" rx="4"/>
+  
+  <line x1="70" y1="405" x2="100" y2="405" stroke="#003057" stroke-width="2" stroke-dasharray="8,4"/>
+  <text x="110" y="409" font-family="Roboto, sans-serif" font-size="11" fill="#333">Euclidean 500m buffer</text>
+  
+  <rect x="230" y="398" width="20" height="14" fill="#4caf5040" stroke="#4caf50" stroke-width="2"/>
+  <text x="260" y="409" font-family="Roboto, sans-serif" font-size="11" fill="#333">Network 500m isochrone</text>
+  
+  <rect x="420" y="398" width="20" height="14" fill="#ef535080" stroke="#ef5350" stroke-width="2"/>
+  <text x="450" y="409" font-family="Roboto, sans-serif" font-size="11" fill="#333">Transit desert</text>
+  
+  <text x="300" y="430" text-anchor="middle" font-family="Roboto, sans-serif" font-size="10" fill="#666">Areas within Euclidean buffer but outside network isochrone = potential transit deserts</text>
+</svg>
+

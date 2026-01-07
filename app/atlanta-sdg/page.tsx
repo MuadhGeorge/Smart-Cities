@@ -356,54 +356,6 @@ export default function AtlantaSDGPage() {
           </div>
         </section>
 
-        {/* How to Run */}
-        <section>
-          <h2 className="text-2xl font-serif font-bold mb-6">How to Run</h2>
-          <Card className="p-6">
-            <ol className="space-y-4">
-              <li className="flex items-start">
-                <span className="flex-shrink-0 w-8 h-8 bg-gt-navy text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">
-                  1
-                </span>
-                <div>
-                  <p className="font-semibold">Install Python dependencies</p>
-                  <code className="block mt-1 bg-gray-100 px-3 py-2 rounded text-sm">
-                    pip install -r requirements.txt
-                  </code>
-                </div>
-              </li>
-              <li className="flex items-start">
-                <span className="flex-shrink-0 w-8 h-8 bg-gt-navy text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">
-                  2
-                </span>
-                <div>
-                  <p className="font-semibold">Run the notebooks in order</p>
-                  <code className="block mt-1 bg-gray-100 px-3 py-2 rounded text-sm">
-                    jupyter notebook notebooks/
-                  </code>
-                  <p className="text-sm text-gray-600 mt-1">
-                    Run: core_analysis.ipynb → benchmark.ipynb → dashboard.ipynb
-                  </p>
-                </div>
-              </li>
-              <li className="flex items-start">
-                <span className="flex-shrink-0 w-8 h-8 bg-gt-navy text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">
-                  3
-                </span>
-                <div>
-                  <p className="font-semibold">View the dashboard</p>
-                  <p className="text-sm text-gray-600 mt-1">
-                    The dashboard will be available at{" "}
-                    <code className="bg-gray-100 px-2 py-0.5 rounded">/atlanta-sdg</code>{" "}
-                    on the website, or open{" "}
-                    <code className="bg-gray-100 px-2 py-0.5 rounded">public/dashboard/atlanta_dashboard.html</code>{" "}
-                    directly.
-                  </p>
-                </div>
-              </li>
-            </ol>
-          </Card>
-        </section>
       </div>
     </div>
   );
