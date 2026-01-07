@@ -1,0 +1,30 @@
+# Atlanta SDG Portfolio Project - Python Dependencies
+# Install with: pip install -r requirements.txt
+
+# Core geospatial
+osmnx>=1.9.0
+geopandas>=0.14.0
+shapely>=2.0.0
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Network analysis
+networkx>=3.0
+pandana>=0.6.1
+
+# GTFS processing
+requests>=2.31.0
+
+# Visualization & Dashboard
+keplergl>=0.3.2
+folium>=0.14.0
+matplotlib>=3.7.0
+
+# Jupyter
+jupyter>=1.0.0
+ipykernel>=6.25.0
+
+# Census data (optional)
+census>=0.8.19
+us>=3.1.1
+
