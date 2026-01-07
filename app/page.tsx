@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FileText, BarChart3, Database, Users, Shield, Clock } from "lucide-react";
+import { FileText, BarChart3, Database, Users, Shield, Clock, MapPin } from "lucide-react";
 import homeContent from "@/public/data/home-content.json";
 
 const quickLinks = [
@@ -32,18 +32,25 @@ const quickLinks = [
     color: "bg-gt-gold-dark"
   },
   {
+    href: "/atlanta-sdg",
+    title: "Atlanta SDG",
+    description: "Atlanta Smart City Data Architecture project",
+    icon: MapPin,
+    color: "bg-gt-navy"
+  },
+  {
     href: "/sources",
     title: "Sources",
     description: "Browse datasets, papers, and tools used",
     icon: Database,
-    color: "bg-gt-navy"
+    color: "bg-gt-gold-dark"
   },
   {
     href: "/evidence",
     title: "Evidence",
     description: "Claims-to-evidence ledger for transparency",
     icon: Shield,
-    color: "bg-gt-gold-dark"
+    color: "bg-gt-navy"
   },
 ];
 
