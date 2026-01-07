@@ -64,7 +64,7 @@ export default function AboutPage() {
                   <strong>Official Team Page:</strong> VIP Team 1270 - SDGs: Resilient Infrastructures and Sustainable Innovation
                   <br />
                   <a 
-                    href="https://www.vip.gatech.edu/teams/vvr" 
+                    href="https://vip.gatech.edu/teams/entry/1270/" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="text-gt-navy hover:text-gt-gold-dark inline-flex items-center mt-2 font-medium"
