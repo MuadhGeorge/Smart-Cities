@@ -9,6 +9,7 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/timeline", label: "Timeline" },
+  { href: "/atlanta-sdg", label: "Atlanta SDG" },
   { href: "/report", label: "Report" },
   { href: "/results", label: "Results" },
   { href: "/sources", label: "Sources" },

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FileText, BarChart3, Database, Users, Shield, Clock } from "lucide-react";
+import { FileText, BarChart3, Database, Users, Shield, Clock, Map } from "lucide-react";
 import homeContent from "@/public/data/home-content.json";
 
 const quickLinks = [
@@ -114,13 +114,52 @@ export default function Home() {
         </div>
       </section>
 
-      {/* What I Did Section */}
+      {/* Featured Project: Atlanta SDG */}
       <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-serif font-bold mb-8 text-center">
+            Featured Project
+          </h2>
+          <Link 
+            href="/atlanta-sdg"
+            className="block bg-gradient-to-br from-gt-navy to-gt-gold-dark rounded-2xl overflow-hidden hover:scale-[1.01] transition-transform shadow-lg"
+          >
+            <div className="p-8 md:p-12 text-white">
+              <div className="flex items-center mb-4">
+                <div className="w-14 h-14 bg-gt-buzz-gold rounded-xl flex items-center justify-center mr-4">
+                  <Map className="text-gt-navy" size={28} />
+                </div>
+                <div>
+                  <span className="text-gt-buzz-gold text-sm font-semibold">PROOF OF CONCEPT</span>
+                  <h3 className="text-2xl md:text-3xl font-serif font-bold">Atlanta SDG Portfolio Project</h3>
+                </div>
+              </div>
+              <p className="text-gray-200 mb-6 text-lg max-w-3xl">
+                Interactive demonstration of transit accessibility analysis using MARTA GTFS data, 
+                OSMnx walk networks, and Pandana isochrone computation. Includes Kepler.gl dashboard
+                with Census Tract overlays.
+              </p>
+              <div className="flex flex-wrap gap-3 mb-6">
+                <span className="px-3 py-1 bg-white/20 rounded-full text-sm">MARTA GTFS</span>
+                <span className="px-3 py-1 bg-white/20 rounded-full text-sm">OSMnx + Pandana</span>
+                <span className="px-3 py-1 bg-white/20 rounded-full text-sm">Kepler.gl Dashboard</span>
+                <span className="px-3 py-1 bg-white/20 rounded-full text-sm">NetworkX Benchmark</span>
+              </div>
+              <span className="inline-flex items-center text-gt-buzz-gold font-semibold">
+                View Project Demo →
+              </span>
+            </div>
+          </Link>
+        </div>
+      </section>
+
+      {/* What I Did Section */}
+      <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-serif font-bold mb-8 text-center">
             What I Did
           </h2>
-          <div className="bg-gray-50 rounded-lg p-8">
+          <div className="bg-white rounded-lg p-8 shadow-sm">
             <ul className="space-y-3">
               {homeContent.whatIDidItems.map((item, index) => (
                 <li key={index} className="flex items-start">

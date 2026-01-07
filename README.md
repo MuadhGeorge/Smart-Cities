@@ -44,6 +44,7 @@ Open [http://localhost:3000](http://localhost:3000) to view the site.
 │   ├── page.tsx           # Home page
 │   ├── about/             # About page
 │   ├── timeline/          # Interactive timeline
+│   ├── atlanta-sdg/       # Atlanta SDG Portfolio Project
 │   ├── report/            # PDF report viewer
 │   ├── results/           # Data visualizations & maps
 │   ├── sources/           # Data sources & references
@@ -51,11 +52,60 @@ Open [http://localhost:3000](http://localhost:3000) to view the site.
 │   ├── evidence/          # Claims-to-evidence ledger
 │   └── contact/           # Contact information
 ├── components/            # Reusable React components
+├── notebooks/             # Python analysis notebooks
+│   ├── core_analysis.ipynb    # MARTA GTFS + isochrone
+│   ├── benchmark.ipynb        # NetworkX vs Pandana
+│   └── dashboard.ipynb        # Kepler.gl dashboard
+├── data/                  # Downloaded datasets (ARC tracts)
+├── gtfs_data/             # MARTA GTFS files
+├── outputs/               # Generated analysis outputs
+├── dashboard/             # Kepler.gl HTML exports
 ├── public/
 │   ├── data/             # JSON data files
+│   ├── dashboard/        # Dashboard for website embed
 │   └── reports/          # PDF reports
 └── tailwind.config.ts    # Georgia Tech theme
 ```
+
+## 🗺️ Atlanta SDG Portfolio Project
+
+A proof-of-concept demonstrating transit accessibility analysis. View at [/atlanta-sdg](/atlanta-sdg).
+
+### Features
+- **MARTA GTFS Analysis**: Download and parse transit stops
+- **Walk Isochrone**: 500m accessibility polygon using OSMnx + Pandana
+- **Benchmark**: NetworkX vs Pandana performance comparison (~30x speedup)
+- **Interactive Dashboard**: Kepler.gl map embedded in the website
+
+### Data Sources
+- [MARTA GTFS](https://itsmarta.com/app-developer-resources.aspx) - Transit stops and routes
+- [ARC 2020 Census Tracts](https://opendata.atlantaregional.com/datasets/coaplangis::2020-census-tracts-city-of-atlanta/about) - City of Atlanta boundaries
+- [OpenStreetMap](https://www.openstreetmap.org/) - Walk network via OSMnx
+
+### How to Run
+
+```bash
+# Install Python dependencies
+pip install -r requirements.txt
+
+# Run notebooks in order
+jupyter notebook notebooks/
+
+# 1. core_analysis.ipynb - Downloads GTFS, computes isochrone
+# 2. benchmark.ipynb - Compares NetworkX vs Pandana
+# 3. dashboard.ipynb - Generates Kepler.gl HTML
+
+# Dashboard will be at: public/dashboard/atlanta_dashboard.html
+```
+
+### Outputs
+- `outputs/isochrone_500m.geojson` - Walk accessibility polygon
+- `outputs/marta_stops_sample.geojson` - Downtown MARTA stops
+- `outputs/benchmark_results.md` - Performance comparison
+- `dashboard/atlanta_dashboard.html` - Interactive map
+- `data/arc_census_tracts_2020.geojson` - Census tract boundaries
+
+---
 
 ## 🎨 Georgia Tech Branding
 

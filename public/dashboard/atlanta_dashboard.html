@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlanta SDG Dashboard - Placeholder</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #003057 0%, #1a1a2e 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        .container {
+            max-width: 600px;
+            text-align: center;
+            padding: 40px;
+        }
+        .icon {
+            width: 80px;
+            height: 80px;
+            background: #EAAA00;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+        }
+        .icon svg {
+            width: 40px;
+            height: 40px;
+            fill: #003057;
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 16px;
+            color: #EAAA00;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #b0b0b0;
+            margin-bottom: 24px;
+        }
+        .steps {
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: left;
+        }
+        .steps h2 {
+            font-size: 18px;
+            margin-bottom: 16px;
+            color: white;
+        }
+        .steps ol {
+            padding-left: 24px;
+        }
+        .steps li {
+            margin-bottom: 12px;
+            color: #d0d0d0;
+        }
+        .steps code {
+            background: rgba(234, 170, 0, 0.2);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #EAAA00;
+        }
+        .badge {
+            display: inline-block;
+            background: #EAAA00;
+            color: #003057;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+        </div>
+        <span class="badge">PLACEHOLDER</span>
+        <h1>Atlanta SDG Dashboard</h1>
+        <p>
+            The interactive Kepler.gl dashboard will appear here after you run the Python notebooks.
+        </p>
+        <div class="steps">
+            <h2>To generate the dashboard:</h2>
+            <ol>
+                <li>Install dependencies: <code>pip install -r requirements.txt</code></li>
+                <li>Run <code>notebooks/core_analysis.ipynb</code></li>
+                <li>Run <code>notebooks/benchmark.ipynb</code></li>
+                <li>Run <code>notebooks/dashboard.ipynb</code></li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>
+
