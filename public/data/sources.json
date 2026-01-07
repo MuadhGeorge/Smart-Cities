@@ -1,35 +1,42 @@
 [
   {
-    "title": "Sample Urban Infrastructure Dataset",
-    "type": "dataset",
-    "publisher": "Example City Open Data",
-    "year": 2023,
-    "url": "https://example.com/dataset",
-    "note": "TODO: Replace with actual dataset used"
-  },
-  {
-    "title": "Smart Cities Framework Paper",
+    "title": "VIP Team 1270 — SDGs: Resilient Infrastructures and Sustainable Innovation",
     "type": "paper",
-    "publisher": "Academic Journal",
-    "year": 2022,
-    "url": "https://example.com/paper",
-    "note": "TODO: Replace with actual papers cited"
+    "publisher": "Georgia Tech VIP",
+    "year": 2026,
+    "url": "https://vip.gatech.edu/teams/entry/1270/",
+    "note": "Official VIP team page used to describe goals/methods/advisors."
   },
   {
-    "title": "Python Data Analysis Tools",
+    "title": "Georgia Tech Brand Guide — Colors",
     "type": "tool",
-    "publisher": "Python Software Foundation",
-    "year": 2024,
-    "url": "https://www.python.org",
-    "note": "Used for data processing and analysis"
+    "publisher": "Georgia Tech",
+    "year": 2025,
+    "url": "https://brand.gatech.edu/our-look/colors",
+    "note": "Used for portfolio color system + accessibility rules."
   },
   {
-    "title": "Jupyter Notebooks",
+    "title": "Georgia Tech Registrar — Calendar Archive",
     "type": "tool",
-    "publisher": "Project Jupyter",
+    "publisher": "Georgia Tech Registrar",
+    "year": 2025,
+    "url": "https://registrar.gatech.edu/info/calendar-archive",
+    "note": "Used to align timeline entries to academic terms."
+  },
+  {
+    "title": "Urban Displacement Project — Predicting Neighborhood Change Using Big Data and Machine Learning",
+    "type": "paper",
+    "publisher": "Urban Displacement Project",
+    "year": 2019,
+    "url": "https://www.urbandisplacement.org/",
+    "note": "Background reading for displacement/gentrification framing."
+  },
+  {
+    "title": "USDA — Food Access Research Atlas",
+    "type": "dataset",
+    "publisher": "USDA ERS",
     "year": 2024,
-    "url": "https://jupyter.org",
-    "note": "Primary analysis environment"
+    "url": "https://www.ers.usda.gov/data-products/food-access-research-atlas/",
+    "note": "Used for thinking about low-access areas and measurement choices."
   }
 ]
-
