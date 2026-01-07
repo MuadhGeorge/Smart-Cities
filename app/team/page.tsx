@@ -61,7 +61,7 @@ export default function TeamPage() {
                   <ul className="space-y-2 text-sm text-gray-700">
                     <li className="flex items-start">
                       <span className="inline-block w-1.5 h-1.5 bg-gt-buzz-gold rounded-full mt-2 mr-2 flex-shrink-0" />
-                      TODO: Describe Khadijah's specific contributions
+                      TODO: Describe Khadijah&apos;s specific contributions
                     </li>
                     <li className="flex items-start">
                       <span className="inline-block w-1.5 h-1.5 bg-gt-buzz-gold rounded-full mt-2 mr-2 flex-shrink-0" />
@@ -87,7 +87,7 @@ export default function TeamPage() {
                   <ul className="space-y-2 text-sm text-gray-700">
                     <li className="flex items-start">
                       <span className="inline-block w-1.5 h-1.5 bg-gt-buzz-gold rounded-full mt-2 mr-2 flex-shrink-0" />
-                      TODO: Describe Maymuna's specific contributions
+                      TODO: Describe Maymuna&apos;s specific contributions
                     </li>
                     <li className="flex items-start">
                       <span className="inline-block w-1.5 h-1.5 bg-gt-buzz-gold rounded-full mt-2 mr-2 flex-shrink-0" />

@@ -2,7 +2,7 @@
 
 import { BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
 
-interface ChartData {
+export interface ChartData {
   id: string;
   title: string;
   type: "bar" | "line";

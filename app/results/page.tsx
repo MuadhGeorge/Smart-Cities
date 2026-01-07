@@ -4,7 +4,7 @@ import { useState, useMemo } from "react";
 import dynamic from "next/dynamic";
 import { BarChart3, AlertTriangle, FileCheck } from "lucide-react";
 import Card from "@/components/Card";
-import ChartPanel from "@/components/ChartPanel";
+import ChartPanel, { ChartData } from "@/components/ChartPanel";
 import Accordion from "@/components/Accordion";
 import observedData from "@/public/data/observed.json";
 import forecastData from "@/public/data/forecast.json";
@@ -97,7 +97,7 @@ export default function ResultsPage() {
               )}
             </div>
 
-            <ChartPanel charts={observedData.charts} />
+            <ChartPanel charts={observedData.charts as ChartData[]} />
           </div>
         )}
 
@@ -151,7 +151,7 @@ export default function ResultsPage() {
             </div>
 
             <ChartPanel 
-              charts={forecastData.charts} 
+              charts={forecastData.charts as ChartData[]} 
               description={forecastData.description}
             />
           </div>
