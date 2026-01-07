@@ -1,113 +1,110 @@
 [
   {
     "date": "2023-08",
-    "title": "Joined VIP Team 1270",
-    "description": "Started working on SDGs: Resilient Infrastructures and Sustainable Innovation with focus on Smart Cities and Urban Systems",
-    "tags": ["onboarding", "team"],
-    "semester": "Fall 2023"
+    "title": "Onboarding + literature review",
+    "description": "Joined VIP Team 1270 and did early reading on smart city sensing + infrastructure monitoring. Defined a first pass at what "smart cities" meant for our subteam focus.",
+    "tags": ["Research", "Team"],
+    "semester": "Fall 2023",
+    "artifacts": [{"label": "Notes (TODO)", "href": "/"}]
   },
   {
     "date": "2023-09",
-    "title": "Literature Review",
-    "description": "Conducted literature review on smart city frameworks, urban resilience metrics, and infrastructure equity",
-    "tags": ["research", "reading"],
+    "title": "Data pipeline + sensor alignment (early)",
+    "description": "Worked on organizing data sources and thinking through how multi-source data would line up over time + location (GPS + sensor logs conceptually).",
+    "tags": ["Data", "Research"],
     "semester": "Fall 2023"
   },
   {
     "date": "2023-10",
-    "title": "Data Collection Planning",
-    "description": "Identified potential datasets for urban infrastructure analysis and collaborated with team on research scope",
-    "tags": ["planning", "data"],
-    "semester": "Fall 2023",
-    "artifacts": [
-      {
-        "label": "Dataset Survey",
-        "href": "#"
-      }
-    ]
+    "title": "Equity / inclusivity pivot",
+    "description": "Expanded from "infrastructure condition" into equity context: transit access, environmental exposure, and neighborhood-level comparisons.",
+    "tags": ["Research", "Equity"],
+    "semester": "Fall 2023"
   },
   {
     "date": "2023-11",
-    "title": "Initial Analysis Framework",
-    "description": "Developed framework for analyzing urban infrastructure data with equity considerations",
-    "tags": ["analysis", "framework"],
+    "title": "Field test framing + validation plan",
+    "description": "Outlined what validation should look like (ground truth comparison, error sources, and what counts as a correct detection).",
+    "tags": ["Modeling", "Research"],
     "semester": "Fall 2023"
   },
   {
     "date": "2023-12",
-    "title": "Fall Semester Presentation",
-    "description": "Presented preliminary findings and research direction to VIP team",
-    "tags": ["presentation", "milestone"],
-    "semester": "Fall 2023"
+    "title": "Phase 1 write-up",
+    "description": "Summarized early progress and consolidated baseline findings into a report-style format for the semester deliverable.",
+    "tags": ["Writing", "Research"],
+    "semester": "Fall 2023",
+    "artifacts": [{"label": "Semester report (TODO)", "href": "/report"}]
   },
   {
     "date": "2024-01",
-    "title": "Data Processing Pipeline",
-    "description": "Built data processing pipeline for cleaning and preparing urban datasets",
-    "tags": ["coding", "data"],
+    "title": "Python workflow + metric definitions",
+    "description": "Defined the metrics we cared about (infrastructure indicators + equity indicators) and how they would be computed from datasets.",
+    "tags": ["Data", "Modeling"],
     "semester": "Spring 2024"
   },
   {
     "date": "2024-02",
-    "title": "Exploratory Data Analysis",
-    "description": "Conducted EDA on urban infrastructure datasets, identified patterns and potential insights",
-    "tags": ["analysis", "visualization"],
+    "title": "Neighborhood change / displacement framing",
+    "description": "Reviewed approaches used in displacement / gentrification literature and documented what would be reasonable vs misleading to predict.",
+    "tags": ["Research", "Equity"],
     "semester": "Spring 2024"
   },
   {
     "date": "2024-03",
-    "title": "Model Development",
-    "description": "Started developing predictive models for infrastructure assessment",
-    "tags": ["modeling", "coding"],
+    "title": "Urban heat + canopy research synthesis",
+    "description": "Studied heat exposure patterns and documented how remote sensing + canopy metrics could be communicated responsibly.",
+    "tags": ["Research", "Environment"],
     "semester": "Spring 2024"
   },
   {
     "date": "2024-04",
-    "title": "Spring Semester Results",
-    "description": "Compiled initial results and prepared mid-project documentation",
-    "tags": ["milestone", "documentation"],
+    "title": "Visualization prototype planning",
+    "description": "Sketched what an interactive dashboard should show (layers, comparisons, and what a user should take away).",
+    "tags": ["Dashboard", "Design"],
+    "semester": "Spring 2024"
+  },
+  {
+    "date": "2024-05",
+    "title": "Presentation / wrap-up (Spring)",
+    "description": "Packaged spring work into a shareable narrative and identified what was missing for a complete end-to-end demo.",
+    "tags": ["Writing", "Team"],
     "semester": "Spring 2024"
   },
   {
     "date": "2024-08",
-    "title": "Model Refinement",
-    "description": "Refined models based on feedback and expanded analysis scope",
-    "tags": ["modeling", "analysis"],
+    "title": "Integration push (Fall)",
+    "description": "Focused on connecting datasets + outputs so results could be shown consistently (not scattered across docs).",
+    "tags": ["Data", "Dashboard"],
     "semester": "Fall 2024"
   },
   {
     "date": "2024-09",
-    "title": "Validation Studies",
-    "description": "Conducted validation studies and sensitivity analysis on model outputs",
-    "tags": ["validation", "testing"],
+    "title": "Forecast concept (2030 scenarios)",
+    "description": "Outlined scenario-based forecasts (e.g., stagnation vs expansion) and documented assumptions + risks of over-claiming.",
+    "tags": ["Forecast", "Equity"],
     "semester": "Fall 2024"
   },
   {
     "date": "2024-10",
-    "title": "Final Analysis",
-    "description": "Completed final analysis and interpretation of results with team collaboration",
-    "tags": ["analysis", "collaboration"],
+    "title": "Portfolio site planning",
+    "description": "Planned the structure of a public portfolio: timeline, report, sources, and results dashboard with evidence tracking.",
+    "tags": ["Design", "Writing"],
     "semester": "Fall 2024"
   },
   {
     "date": "2024-11",
-    "title": "Final Report Writing",
-    "description": "Drafted and revised final research report documenting methodology and findings",
-    "tags": ["writing", "documentation"],
-    "semester": "Fall 2024",
-    "artifacts": [
-      {
-        "label": "Final Report",
-        "href": "/report"
-      }
-    ]
+    "title": "Validation + final edits",
+    "description": "Final pass: sanity-check claims, verify sources, and finalize deliverables for the semester.",
+    "tags": ["Research", "Writing"],
+    "semester": "Fall 2024"
   },
   {
     "date": "2024-12",
-    "title": "Project Completion",
-    "description": "Completed VIP research project and final presentation",
-    "tags": ["milestone", "presentation"],
-    "semester": "Fall 2024"
+    "title": "Final delivery",
+    "description": "Archived work into a final report + portfolio format so it can be shared publicly with recruiters.",
+    "tags": ["Delivery"],
+    "semester": "Fall 2024",
+    "artifacts": [{"label": "Final report PDF", "href": "/reports/final_report.pdf"}]
   }
 ]
-
