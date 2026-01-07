@@ -11,7 +11,6 @@ const navLinks = [
   { href: "/timeline", label: "Timeline" },
   { href: "/report", label: "Report" },
   { href: "/results", label: "Results" },
-  { href: "/atlanta-sdg", label: "Atlanta SDG" },
   { href: "/sources", label: "Sources" },
   { href: "/team", label: "Team" },
   { href: "/evidence", label: "Evidence" },
