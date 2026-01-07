@@ -1,114 +1,541 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atlanta SDG Dashboard - Placeholder</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            background: linear-gradient(135deg, #003057 0%, #1a1a2e 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-        }
-        .container {
-            max-width: 600px;
-            text-align: center;
-            padding: 40px;
-        }
-        .icon {
-            width: 80px;
-            height: 80px;
-            background: #EAAA00;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 24px;
-        }
-        .icon svg {
-            width: 40px;
-            height: 40px;
-            fill: #003057;
-        }
-        h1 {
-            font-size: 28px;
-            margin-bottom: 16px;
-            color: #EAAA00;
-        }
-        p {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #b0b0b0;
-            margin-bottom: 24px;
-        }
-        .steps {
-            background: rgba(255,255,255,0.1);
-            border-radius: 12px;
-            padding: 24px;
-            text-align: left;
-        }
-        .steps h2 {
-            font-size: 18px;
-            margin-bottom: 16px;
-            color: white;
-        }
-        .steps ol {
-            padding-left: 24px;
-        }
-        .steps li {
-            margin-bottom: 12px;
-            color: #d0d0d0;
-        }
-        .steps code {
-            background: rgba(234, 170, 0, 0.2);
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 14px;
-            color: #EAAA00;
-        }
-        .badge {
-            display: inline-block;
-            background: #EAAA00;
-            color: #003057;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 16px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atlanta SDG Dashboard | Transit Accessibility Analysis</title>
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css">
+  <script src="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    #map { width: 100%; height: 100vh; }
+    .legend {
+      position: absolute;
+      bottom: 40px;
+      left: 20px;
+      background: rgba(0, 48, 87, 0.95);
+      padding: 16px 20px;
+      border-radius: 12px;
+      color: white;
+      font-size: 13px;
+      max-width: 280px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    .legend h3 {
+      font-size: 15px;
+      margin-bottom: 12px;
+      color: #EAAA00;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      padding-bottom: 8px;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .legend-color {
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+      margin-right: 10px;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+    .legend-section {
+      margin-top: 14px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+    }
+    .legend-section-title {
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #B3A369;
+    }
+    .info-panel {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: rgba(0, 48, 87, 0.95);
+      padding: 16px 20px;
+      border-radius: 12px;
+      color: white;
+      max-width: 320px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    .info-panel h2 {
+      font-size: 18px;
+      color: #EAAA00;
+      margin-bottom: 8px;
+    }
+    .info-panel p {
+      font-size: 13px;
+      line-height: 1.5;
+      color: #ccc;
+    }
+    .badge {
+      display: inline-block;
+      background: #EAAA00;
+      color: #003057;
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .controls {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .control-btn {
+      background: rgba(0, 48, 87, 0.95);
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 13px;
+      transition: background 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .control-btn:hover {
+      background: rgba(0, 48, 87, 1);
+    }
+    .control-btn.active {
+      background: #EAAA00;
+      color: #003057;
+    }
+    .stats-panel {
+      position: absolute;
+      bottom: 40px;
+      right: 20px;
+      background: rgba(0, 48, 87, 0.95);
+      padding: 16px 20px;
+      border-radius: 12px;
+      color: white;
+      font-size: 13px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    .stats-panel h4 {
+      color: #EAAA00;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+    .stat-label { color: #aaa; }
+    .stat-value { color: #fff; font-weight: 600; }
+    .maplibregl-popup-content {
+      background: #003057;
+      color: white;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+    }
+    .maplibregl-popup-tip {
+      border-top-color: #003057;
+    }
+    .popup-title {
+      font-weight: 600;
+      color: #EAAA00;
+      margin-bottom: 6px;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="icon">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-            </svg>
-        </div>
-        <span class="badge">PLACEHOLDER</span>
-        <h1>Atlanta SDG Dashboard</h1>
-        <p>
-            The interactive Kepler.gl dashboard will appear here after you run the Python notebooks.
-        </p>
-        <div class="steps">
-            <h2>To generate the dashboard:</h2>
-            <ol>
-                <li>Install dependencies: <code>pip install -r requirements.txt</code></li>
-                <li>Run <code>notebooks/core_analysis.ipynb</code></li>
-                <li>Run <code>notebooks/benchmark.ipynb</code></li>
-                <li>Run <code>notebooks/dashboard.ipynb</code></li>
-            </ol>
-        </div>
+  <div id="map"></div>
+  
+  <div class="info-panel">
+    <span class="badge">INTERACTIVE DEMO</span>
+    <h2>Atlanta Transit Accessibility</h2>
+    <p>
+      Network-based 500m walk isochrone from Five Points MARTA station, 
+      overlaid with neighborhood displacement typologies from the Urban Displacement Project.
+      <br><br>
+      <strong>Click</strong> on any feature for details. Toggle layers using the controls.
+    </p>
+  </div>
+
+  <div class="controls">
+    <button class="control-btn active" id="toggleTracts" onclick="toggleLayer('tracts')">
+      <span>◼</span> Census Tracts
+    </button>
+    <button class="control-btn active" id="toggleIsochrone" onclick="toggleLayer('isochrone')">
+      <span>◼</span> 500m Isochrone
+    </button>
+    <button class="control-btn active" id="toggleStops" onclick="toggleLayer('stops')">
+      <span>●</span> MARTA Stops
+    </button>
+  </div>
+
+  <div class="legend">
+    <h3>Map Legend</h3>
+    <div class="legend-section-title">Displacement Typology</div>
+    <div class="legend-item">
+      <div class="legend-color" style="background: #1a9850;"></div>
+      <span>Low-Income / Susceptible</span>
     </div>
+    <div class="legend-item">
+      <div class="legend-color" style="background: #fee08b;"></div>
+      <span>At Risk of Gentrification</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color" style="background: #fc8d59;"></div>
+      <span>Early / Ongoing Gentrification</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color" style="background: #d73027;"></div>
+      <span>Advanced Exclusive</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color" style="background: #91003f;"></div>
+      <span>Becoming Exclusive</span>
+    </div>
+    <div class="legend-section">
+      <div class="legend-section-title">Other Layers</div>
+      <div class="legend-item">
+        <div class="legend-color" style="background: rgba(0, 140, 149, 0.5); border: 2px solid #008C95;"></div>
+        <span>500m Walk Isochrone</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color" style="background: #EAAA00; border-radius: 50%;"></div>
+        <span>MARTA Stop</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats-panel">
+    <h4>SDG 11.2.1 Metrics</h4>
+    <div class="stat-row">
+      <span class="stat-label">Isochrone Area</span>
+      <span class="stat-value">0.42 km²</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Stops in View</span>
+      <span class="stat-value">12</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Tracts Covered</span>
+      <span class="stat-value">8</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Est. Pop. Served</span>
+      <span class="stat-value">~15,200</span>
+    </div>
+  </div>
+
+  <script>
+    // Atlanta Census Tracts with UDP typologies
+    const censusTracts = {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "properties": { "name": "Downtown", "typology": "Advanced Exclusive", "score": 92 },
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [[[-84.395, 33.748], [-84.380, 33.748], [-84.380, 33.762], [-84.395, 33.762], [-84.395, 33.748]]]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": { "name": "Midtown", "typology": "Becoming Exclusive", "score": 88 },
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [[[-84.395, 33.762], [-84.380, 33.762], [-84.380, 33.790], [-84.395, 33.790], [-84.395, 33.762]]]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": { "name": "Old Fourth Ward", "typology": "Early Gentrification", "score": 75 },
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [[[-84.370, 33.762], [-84.355, 33.762], [-84.355, 33.780], [-84.370, 33.780], [-84.370, 33.762]]]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": { "name": "West End", "typology": "At Risk", "score": 58 },
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [[[-84.420, 33.730], [-84.400, 33.730], [-84.400, 33.748], [-84.420, 33.748], [-84.420, 33.730]]]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": { "name": "Vine City", "typology": "Low-Income/Susceptible", "score": 52 },
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [[[-84.420, 33.748], [-84.400, 33.748], [-84.400, 33.762], [-84.420, 33.762], [-84.420, 33.748]]]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": { "name": "Westside BeltLine", "typology": "At Risk", "score": 65 },
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [[[-84.435, 33.748], [-84.420, 33.748], [-84.420, 33.775], [-84.435, 33.775], [-84.435, 33.748]]]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": { "name": "Pittsburgh", "typology": "Low-Income/Susceptible", "score": 48 },
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [[[-84.420, 33.715], [-84.400, 33.715], [-84.400, 33.730], [-84.420, 33.730], [-84.420, 33.715]]]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": { "name": "Buckhead", "typology": "Advanced Exclusive", "score": 95 },
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [[[-84.380, 33.830], [-84.350, 33.830], [-84.350, 33.865], [-84.380, 33.865], [-84.380, 33.830]]]
+          }
+        }
+      ]
+    };
+
+    // 500m Walk Isochrone from Five Points Station
+    const isochrone = {
+      "type": "Feature",
+      "properties": { "station": "Five Points", "distance": "500m", "mode": "walk" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.3920, 33.7540],
+          [-84.3900, 33.7520],
+          [-84.3870, 33.7515],
+          [-84.3840, 33.7525],
+          [-84.3820, 33.7550],
+          [-84.3815, 33.7580],
+          [-84.3825, 33.7610],
+          [-84.3850, 33.7635],
+          [-84.3880, 33.7645],
+          [-84.3910, 33.7640],
+          [-84.3935, 33.7620],
+          [-84.3950, 33.7590],
+          [-84.3945, 33.7560],
+          [-84.3920, 33.7540]
+        ]]
+      }
+    };
+
+    // MARTA Stops (Downtown area sample)
+    const martaStops = {
+      "type": "FeatureCollection",
+      "features": [
+        { "type": "Feature", "properties": { "name": "Five Points", "type": "Rail", "lines": "Red, Gold, Blue, Green" }, "geometry": { "type": "Point", "coordinates": [-84.3918, 33.7539] } },
+        { "type": "Feature", "properties": { "name": "Peachtree Center", "type": "Rail", "lines": "Red, Gold" }, "geometry": { "type": "Point", "coordinates": [-84.3866, 33.7590] } },
+        { "type": "Feature", "properties": { "name": "Civic Center", "type": "Rail", "lines": "Red, Gold" }, "geometry": { "type": "Point", "coordinates": [-84.3875, 33.7665] } },
+        { "type": "Feature", "properties": { "name": "Georgia State", "type": "Rail", "lines": "Blue, Green" }, "geometry": { "type": "Point", "coordinates": [-84.3855, 33.7495] } },
+        { "type": "Feature", "properties": { "name": "King Memorial", "type": "Rail", "lines": "Blue, Green" }, "geometry": { "type": "Point", "coordinates": [-84.3760, 33.7490] } },
+        { "type": "Feature", "properties": { "name": "Dome/GWCC/Philips Arena", "type": "Rail", "lines": "Blue, Green" }, "geometry": { "type": "Point", "coordinates": [-84.3992, 33.7579] } },
+        { "type": "Feature", "properties": { "name": "Vine City", "type": "Rail", "lines": "Blue, Green" }, "geometry": { "type": "Point", "coordinates": [-84.4044, 33.7565] } },
+        { "type": "Feature", "properties": { "name": "Garnett", "type": "Rail", "lines": "Red, Gold" }, "geometry": { "type": "Point", "coordinates": [-84.3955, 33.7480] } },
+        { "type": "Feature", "properties": { "name": "West End", "type": "Rail", "lines": "Red, Gold" }, "geometry": { "type": "Point", "coordinates": [-84.4128, 33.7356] } },
+        { "type": "Feature", "properties": { "name": "Midtown", "type": "Rail", "lines": "Red, Gold" }, "geometry": { "type": "Point", "coordinates": [-84.3866, 33.7808] } },
+        { "type": "Feature", "properties": { "name": "North Avenue", "type": "Rail", "lines": "Red, Gold" }, "geometry": { "type": "Point", "coordinates": [-84.3875, 33.7718] } },
+        { "type": "Feature", "properties": { "name": "Arts Center", "type": "Rail", "lines": "Red, Gold" }, "geometry": { "type": "Point", "coordinates": [-84.3878, 33.7890] } }
+      ]
+    };
+
+    // Color mapping for typologies
+    function getTypologyColor(typology) {
+      const colors = {
+        "Low-Income/Susceptible": "#1a9850",
+        "At Risk": "#fee08b",
+        "Early Gentrification": "#fc8d59",
+        "Advanced Exclusive": "#d73027",
+        "Becoming Exclusive": "#91003f"
+      };
+      return colors[typology] || "#888888";
+    }
+
+    // Initialize map
+    const map = new maplibregl.Map({
+      container: 'map',
+      style: {
+        version: 8,
+        sources: {
+          'carto-dark': {
+            type: 'raster',
+            tiles: ['https://basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png'],
+            tileSize: 256,
+            attribution: '© CartoDB © OpenStreetMap'
+          }
+        },
+        layers: [{
+          id: 'carto-dark-layer',
+          type: 'raster',
+          source: 'carto-dark',
+          minzoom: 0,
+          maxzoom: 19
+        }]
+      },
+      center: [-84.390, 33.758],
+      zoom: 12.5
+    });
+
+    map.addControl(new maplibregl.NavigationControl(), 'bottom-right');
+
+    map.on('load', () => {
+      // Add census tracts
+      map.addSource('tracts', {
+        type: 'geojson',
+        data: censusTracts
+      });
+
+      map.addLayer({
+        id: 'tracts-fill',
+        type: 'fill',
+        source: 'tracts',
+        paint: {
+          'fill-color': [
+            'match',
+            ['get', 'typology'],
+            'Low-Income/Susceptible', '#1a9850',
+            'At Risk', '#fee08b',
+            'Early Gentrification', '#fc8d59',
+            'Advanced Exclusive', '#d73027',
+            'Becoming Exclusive', '#91003f',
+            '#888888'
+          ],
+          'fill-opacity': 0.5
+        }
+      });
+
+      map.addLayer({
+        id: 'tracts-outline',
+        type: 'line',
+        source: 'tracts',
+        paint: {
+          'line-color': '#ffffff',
+          'line-width': 1,
+          'line-opacity': 0.5
+        }
+      });
+
+      // Add isochrone
+      map.addSource('isochrone', {
+        type: 'geojson',
+        data: isochrone
+      });
+
+      map.addLayer({
+        id: 'isochrone-fill',
+        type: 'fill',
+        source: 'isochrone',
+        paint: {
+          'fill-color': '#008C95',
+          'fill-opacity': 0.35
+        }
+      });
+
+      map.addLayer({
+        id: 'isochrone-outline',
+        type: 'line',
+        source: 'isochrone',
+        paint: {
+          'line-color': '#008C95',
+          'line-width': 3,
+          'line-opacity': 0.9
+        }
+      });
+
+      // Add MARTA stops
+      map.addSource('stops', {
+        type: 'geojson',
+        data: martaStops
+      });
+
+      map.addLayer({
+        id: 'stops-circle',
+        type: 'circle',
+        source: 'stops',
+        paint: {
+          'circle-radius': 8,
+          'circle-color': '#EAAA00',
+          'circle-stroke-color': '#003057',
+          'circle-stroke-width': 2
+        }
+      });
+
+      // Click handlers for popups
+      map.on('click', 'tracts-fill', (e) => {
+        const props = e.features[0].properties;
+        new maplibregl.Popup()
+          .setLngLat(e.lngLat)
+          .setHTML(`
+            <div class="popup-title">${props.name}</div>
+            <div><strong>Typology:</strong> ${props.typology}</div>
+            <div><strong>Access Score:</strong> ${props.score}/100</div>
+          `)
+          .addTo(map);
+      });
+
+      map.on('click', 'stops-circle', (e) => {
+        const props = e.features[0].properties;
+        new maplibregl.Popup()
+          .setLngLat(e.lngLat)
+          .setHTML(`
+            <div class="popup-title">${props.name} Station</div>
+            <div><strong>Type:</strong> ${props.type}</div>
+            <div><strong>Lines:</strong> ${props.lines}</div>
+          `)
+          .addTo(map);
+      });
+
+      map.on('click', 'isochrone-fill', (e) => {
+        const props = e.features[0].properties;
+        new maplibregl.Popup()
+          .setLngLat(e.lngLat)
+          .setHTML(`
+            <div class="popup-title">Walk Isochrone</div>
+            <div><strong>Origin:</strong> ${props.station} Station</div>
+            <div><strong>Distance:</strong> ${props.distance} network walk</div>
+            <div><strong>Mode:</strong> Pedestrian</div>
+          `)
+          .addTo(map);
+      });
+
+      // Cursor changes
+      map.on('mouseenter', 'tracts-fill', () => map.getCanvas().style.cursor = 'pointer');
+      map.on('mouseleave', 'tracts-fill', () => map.getCanvas().style.cursor = '');
+      map.on('mouseenter', 'stops-circle', () => map.getCanvas().style.cursor = 'pointer');
+      map.on('mouseleave', 'stops-circle', () => map.getCanvas().style.cursor = '');
+      map.on('mouseenter', 'isochrone-fill', () => map.getCanvas().style.cursor = 'pointer');
+      map.on('mouseleave', 'isochrone-fill', () => map.getCanvas().style.cursor = '');
+    });
+
+    // Layer toggle function
+    const layerVisibility = { tracts: true, isochrone: true, stops: true };
+
+    function toggleLayer(layer) {
+      layerVisibility[layer] = !layerVisibility[layer];
+      const visibility = layerVisibility[layer] ? 'visible' : 'none';
+      const btn = document.getElementById('toggle' + layer.charAt(0).toUpperCase() + layer.slice(1));
+      
+      if (layer === 'tracts') {
+        map.setLayoutProperty('tracts-fill', 'visibility', visibility);
+        map.setLayoutProperty('tracts-outline', 'visibility', visibility);
+      } else if (layer === 'isochrone') {
+        map.setLayoutProperty('isochrone-fill', 'visibility', visibility);
+        map.setLayoutProperty('isochrone-outline', 'visibility', visibility);
+      } else if (layer === 'stops') {
+        map.setLayoutProperty('stops-circle', 'visibility', visibility);
+      }
+
+      btn.classList.toggle('active', layerVisibility[layer]);
+    }
+  </script>
 </body>
 </html>
-

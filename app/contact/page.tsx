@@ -24,7 +24,7 @@ export default function ContactPage() {
           
           <div className="space-y-4 max-w-md mx-auto">
             <a
-              href="mailto:mabdulhaleem3@gatech.edu"
+              href="mailto:muadh308@gmail.com"
               className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
             >
               <div className="w-12 h-12 bg-gt-navy rounded-full flex items-center justify-center flex-shrink-0">
@@ -32,12 +32,12 @@ export default function ContactPage() {
               </div>
               <div>
                 <div className="font-semibold">Email</div>
-                <div className="text-sm text-gray-600">mabdulhaleem3@gatech.edu</div>
+                <div className="text-sm text-gray-600">muadh308@gmail.com</div>
               </div>
             </a>
 
             <a
-              href="https://linkedin.com/in/"
+              href="https://www.linkedin.com/in/muadhgeorge/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
@@ -47,13 +47,13 @@ export default function ContactPage() {
               </div>
               <div className="flex-1">
                 <div className="font-semibold">LinkedIn</div>
-                <div className="text-sm text-gray-600">Connect with me</div>
+                <div className="text-sm text-gray-600">linkedin.com/in/muadhgeorge</div>
               </div>
               <ExternalLink className="text-gray-400" size={18} />
             </a>
 
             <a
-              href="https://github.com/"
+              href="https://github.com/muadhgeorge"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
@@ -63,7 +63,7 @@ export default function ContactPage() {
               </div>
               <div className="flex-1">
                 <div className="font-semibold">GitHub</div>
-                <div className="text-sm text-gray-600">View my projects</div>
+                <div className="text-sm text-gray-600">github.com/muadhgeorge</div>
               </div>
               <ExternalLink className="text-gray-400" size={18} />
             </a>
@@ -76,32 +76,23 @@ export default function ContactPage() {
             About Me
           </h3>
           <p className="text-gray-700 mb-4">
-            I&apos;m a Georgia Tech undergraduate student who participated in the VIP program, 
-            working on Team 1270: SDGs — Resilient Infrastructures and Sustainable Innovation 
-            from August 2023 to December 2024.
+            I&apos;m Muadh George, a Software Engineer and Computer Science student at Georgia Tech 
+            (B.S. CS, projected May 2025). I split my time between building full-stack systems 
+            with Next.js, TypeScript, Go, and AWS, and doing applied AI work where models have to 
+            ship, not just run once in a notebook.
           </p>
           <p className="text-gray-700 mb-4">
-            My focus was on Smart Cities and Urban Systems analysis, where I explored data-driven 
-            approaches to understanding infrastructure resilience and equity in urban environments.
+            This portfolio zooms in on my role on VIP Team 1270: SDGs — Resilient Infrastructures 
+            and Sustainable Innovation (Aug 2023 – Dec 2024), where I focused on Smart Cities and 
+            Urban Systems analysis — especially network-based transit access, public space equity, 
+            and honest, uncertainty-aware modeling around UN SDG indicators.
           </p>
           <p className="text-gray-700">
-            Feel free to reach out if you have questions about this research, want to discuss 
-            smart cities and urban systems, or are interested in collaboration opportunities.
+            If you want to talk about this research, potential roles, or how to take similar SDG-style 
+            analytics into production systems, feel free to reach out.
           </p>
         </Card>
 
-        {/* Instructions */}
-        <div className="mt-8 bg-gt-buzz-gold/10 border border-gt-buzz-gold/30 rounded-lg p-6">
-          <h3 className="font-serif font-semibold text-lg mb-3">
-            ✏️ Customize Contact Information
-          </h3>
-          <p className="text-gray-700 text-sm mb-2">
-            Update your contact details and social media links in:
-          </p>
-          <code className="block bg-white px-3 py-2 rounded font-mono text-xs">
-            app/contact/page.tsx
-          </code>
-        </div>
       </div>
     </div>
   );

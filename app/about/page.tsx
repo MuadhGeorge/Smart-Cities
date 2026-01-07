@@ -15,9 +15,40 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8">
+        {/* Who I Am */}
+        <Card className="mb-2">
+          <h2 className="text-2xl font-serif font-bold mb-3">
+            Who I Am in This Project
+          </h2>
+          <p className="text-gray-700 mb-3">
+            I&apos;m Muadh George, a Software Engineer and Computer Science student at the
+            Georgia Institute of Technology (B.S. CS, expected May 2025, ~3.50 GPA). 
+            Outside this VIP work, I build full-stack systems with Next.js, TypeScript, Go, and AWS,
+            and spend a lot of time thinking about how AI and modern infra can be used responsibly.
+          </p>
+          <p className="text-gray-700 mb-3">
+            The Smart Cities / SDG work you see on this site sits alongside projects like a 
+            serverless AWS media hub, a GPU branch divergence simulator, and AI-driven search 
+            and automation tools. What ties them together is the same habit: take messy systems, 
+            model them honestly, and ship something concrete that another person can actually use.
+          </p>
+          <p className="text-gray-700 text-sm">
+            If you want the broader view of my work (beyond this research portfolio), you can find it on{" "}
+            <a
+              href="https://www.muadhgeorge.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gt-navy hover:text-gt-gold-dark font-medium underline-offset-2 hover:underline"
+            >
+              muadhgeorge.com
+            </a>
+            . This page stays focused on how that background shows up in the VIP Smart Cities context.
+          </p>
+        </Card>
+
         {/* What is VIP */}
-        <Card className="mb-8">
+        <Card>
           <div className="flex items-start">
             <BookOpen className="text-gt-buzz-gold mr-4 flex-shrink-0 mt-1" size={32} />
             <div>
