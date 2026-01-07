@@ -121,7 +121,7 @@ export default function Footer() {
                 <Linkedin size={20} />
               </a>
               <a
-                href="mailto:muadh308@gmail.com"
+                href="mailto:muadh@gatech.edu"
                 className="text-gray-400 hover:text-gt-buzz-gold transition-colors"
                 aria-label="Email"
               >

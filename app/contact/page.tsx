@@ -24,7 +24,7 @@ export default function ContactPage() {
           
           <div className="space-y-4 max-w-md mx-auto">
             <a
-              href="mailto:muadh308@gmail.com"
+              href="mailto:muadh@gatech.edu"
               className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
             >
               <div className="w-12 h-12 bg-gt-navy rounded-full flex items-center justify-center flex-shrink-0">
@@ -32,7 +32,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <div className="font-semibold">Email</div>
-                <div className="text-sm text-gray-600">muadh308@gmail.com</div>
+                <div className="text-sm text-gray-600">muadh@gatech.edu</div>
               </div>
             </a>
 

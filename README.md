@@ -283,4 +283,4 @@ SDGs: Resilient Infrastructures and Sustainable Innovation
 August 2023 – December 2024
 
 **Portfolio by**: Muadh George  
-**Contact**: muadh308@gmail.com | [LinkedIn](https://www.linkedin.com/in/muadhgeorge/) | [GitHub](https://github.com/muadhgeorge)
+**Contact**: muadh@gatech.edu | [LinkedIn](https://www.linkedin.com/in/muadhgeorge/) | [GitHub](https://github.com/muadhgeorge)
